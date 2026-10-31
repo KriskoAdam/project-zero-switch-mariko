@@ -1,0 +1,4 @@
+LIBMTP_Set_Debug: Setting debugging level to 1 (0x01) (on)
+PTP: Opening session
+LIBMTP LIBMTP_Open_Raw_Device_Uncached[2015]: LIBMTP WARNING: no MTP vendor extension on device 2 on bus 0LIBMTP LIBMTP_Open_Raw_Device_Uncached[2017]: LIBMTP WARNING: VendorExtensionID: ffffffffLIBMTP LIBMTP_Open_Raw_Device_Uncached[2019]: LIBMTP WARNING: VendorExtensionDesc: nintendo.com: 1.0; LIBMTP LIBMTP_Open_Raw_Device_Uncached[2022]: LIBMTP WARNING: this typically means the device is PTP (i.e. a camera) but not an MTP device at all. Trying to continue anyway.LIBMTP LIBMTP_Dump_Errorstack[2668]: Error 2: PTP Layer error 2009: LIBMTP_Custom_Operation(): failed to execute operation.
+LIBMTP LIBMTP_Dump_Errorstack[2668]: Error 2: Error 2009: PTP Invalid Object Handle

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROJECT ZERO — harmless web runtime check</title>
+  <style>
+    body { font: 16px/1.45 system-ui, sans-serif; margin: 1.2rem; color: #17212b; }
+    h1 { font-size: 1.35rem; } p { max-width: 52rem; }
+    table { border-collapse: collapse; width: 100%; max-width: 58rem; }
+    th, td { border: 1px solid #9aa8b4; text-align: left; padding: .45rem; vertical-align: top; }
+    th { background: #edf2f5; } .pending { color: #705900; } .pass { color: #176b36; } .fail { color: #a12622; }
+    code { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <h1>PROJECT ZERO — harmless web runtime test</h1>
+  <p>This page only checks the availability of common web interfaces. It does not use external resources, credentials, Nintendo APIs, or native code.</p>
+  <p id="state" class="pending">Running tests…</p>
+  <table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody id="results"></tbody></table>
+  <script>
+  (() => {
+    const PROBE_ID = 'p0-wifiweb-passive-bridge-v1';
+    const results = [];
+    const add = (name, value) => {
+      const text = typeof value === 'string' ? value : JSON.stringify(value);
+      results.push({name, value: text});
+      const row = document.createElement('tr');
+      const a = document.createElement('td'), b = document.createElement('td');
+      a.textContent = name; b.textContent = text;
+      row.append(a, b); document.getElementById('results').append(row);
+    };
+    const finish = async () => {
+      const record = {
+        probe_id: PROBE_ID,
+        collected_at_client: new Date().toISOString(),
+        user_agent: navigator.userAgent || null,
+        platform: navigator.platform || null,
+        language: navigator.language || null,
+        page_protocol: location.protocol,
+        secure_context: window.isSecureContext,
+        tests: results
+      };
+      try {
+        const response = await fetch('/api/results', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(record)});
+        add('Save log to Mac', response.ok ? 'saved' : 'HTTP ' + response.status);
+        document.getElementById('state').textContent = response.ok ? 'Done. Results were saved locally on the Mac.' : 'Tests completed; the server did not confirm that the log was saved.';
+      } catch (e) {
+        add('Save log to Mac', 'unavailable: ' + String(e));
+        document.getElementById('state').textContent = 'Tests completed, but automatic saving to the Mac failed.';
+      }
+    };
+    const descriptorInfo = (object, name) => {
+      try {
+        let cursor = object;
+        for (let depth = 0; cursor && depth < 8; depth++) {
+          const descriptor = Object.getOwnPropertyDescriptor(cursor, name);
+          if (descriptor) {
+            const dataProperty = Object.prototype.hasOwnProperty.call(descriptor, 'value');
+            return {present:true, ownerDepth:depth, kind:dataProperty?'data':'accessor', valueType:dataProperty?typeof descriptor.value:'not-read'};
+          }
+          cursor = Object.getPrototypeOf(cursor);
+        }
+        return {present:false};
+      } catch (_) {
+        return {error:'descriptor inspection failed'};
+      }
+    };
+    const passiveBridgeInventory = () => {
+      try {
+        const names = ['nx','webkit','external','chrome','require','process','Deno','Components'];
+        const globals = {};
+        for (const name of names) globals[name] = descriptorInfo(window, name);
+
+        // Inspect only data-property descriptors. Never read accessor values or invoke bridge methods.
+        let nxSendMessage = {inspectable:false};
+        const nxDescriptor = Object.getOwnPropertyDescriptor(window, 'nx');
+        if (nxDescriptor && Object.prototype.hasOwnProperty.call(nxDescriptor, 'value') && nxDescriptor.value && (typeof nxDescriptor.value === 'object' || typeof nxDescriptor.value === 'function')) {
+          nxSendMessage = descriptorInfo(nxDescriptor.value, 'sendMessage');
+        }
+        let webkitMessageHandlers = {inspectable:false};
+        const webkitDescriptor = Object.getOwnPropertyDescriptor(window, 'webkit');
+        if (webkitDescriptor && Object.prototype.hasOwnProperty.call(webkitDescriptor, 'value') && webkitDescriptor.value && (typeof webkitDescriptor.value === 'object' || typeof webkitDescriptor.value === 'function')) {
+          webkitMessageHandlers = descriptorInfo(webkitDescriptor.value, 'messageHandlers');
+        }
+        return {globals, nxSendMessage, webkitMessageHandlers, invokedAnyNativeBridge:false};
+      } catch (_) {
+        return {error:'passive descriptor inspection failed', invokedAnyNativeBridge:false};
+      }
+    };
+    const run = async () => {
+      add('Experiment ID', PROBE_ID);
+      add('User-Agent', navigator.userAgent || 'unavailable');
+      add('Basic JavaScript APIs', {Promise:typeof Promise, fetch:typeof fetch, URL:typeof URL, JSON:typeof JSON, WebAssembly:typeof WebAssembly});
+      add('JS runtime surface', {BigInt:typeof BigInt, Atomics:typeof Atomics, SharedArrayBuffer:typeof SharedArrayBuffer, Worker:typeof Worker, MessageChannel:typeof MessageChannel});
+      add('Passive inspection of JavaScript-to-native bridges', passiveBridgeInventory());
+      add('DOM a udalosti', {createElement:typeof document.createElement, addEventListener:typeof window.addEventListener});
+      let eventSeen = false;
+      const eventName = 'phase12-check';
+      window.addEventListener(eventName, () => { eventSeen = true; }, {once:true});
+      window.dispatchEvent(new Event(eventName));
+      add('DOM event', eventSeen ? 'success' : 'nesuccess');
+      const canvas = document.createElement('canvas');
+      add('HTML5', {canvas2d:!!(canvas.getContext && canvas.getContext('2d')), video:typeof document.createElement('video').canPlayType, semanticElements:!!document.createElement('main')});
+      add('HTTPS / secure context', {pageProtocol:location.protocol, isSecureContext:window.isSecureContext, cryptoSubtle:typeof crypto !== 'undefined' && typeof crypto.subtle !== 'undefined', note:'The HTTPS certificate and external HTTPS server are not tested.'});
+      try { const r = await fetch('/api/fetch', {method:'POST',headers:{'Content-Type':'text/plain'},body:'phase12-harmless-fetch'}); add('Fetch HTTP', {status:r.status, body:await r.text()}); }
+      catch(e) { add('Fetch HTTP', 'error: ' + String(e)); }
+      try {
+        const xhr = new XMLHttpRequest();
+        const xhrResult = await new Promise(resolve => { xhr.open('POST','/api/xhr'); xhr.onload=()=>resolve({status:xhr.status,body:xhr.responseText}); xhr.onerror=()=>resolve({error:'network error'}); xhr.timeout=5000; xhr.ontimeout=()=>resolve({error:'timeout'}); xhr.send('phase12-harmless-xhr'); });
+        add('XMLHttpRequest', xhrResult);
+      } catch(e) { add('XMLHttpRequest', 'error: ' + String(e)); }
+      add('WebSocket API', typeof WebSocket);
+      if (typeof WebSocket === 'function') {
+        try {
+          const wsResult = await new Promise(resolve => {
+            const ws = new WebSocket('ws://' + location.host + '/ws');
+            const timer = setTimeout(() => { ws.close(); resolve('timeout'); }, 4000);
+            ws.onopen = () => ws.send('phase12-safe-echo');
+            ws.onmessage = e => { clearTimeout(timer); const ok = e.data === 'phase12-safe-echo'; ws.close(); resolve(ok ? 'echo successful' : 'response mismatch'); };
+            ws.onerror = () => { clearTimeout(timer); resolve('connection failed'); };
+          });
+          add('WebSocket connection', wsResult);
+        } catch(e) { add('WebSocket connection', 'error: ' + String(e)); }
+      } else add('WebSocket connection', 'skipped — API unavailable');
+      await finish();
+    };
+    run().catch(e => { add('Uncaught test error', String(e)); document.getElementById('state').textContent='The test did not complete.'; });
+  })();
+  </script>
+</body>
+</html>

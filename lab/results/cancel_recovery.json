@@ -1,0 +1,36 @@
+{
+  "run_id": "cancel-model-depth-4",
+  "evidence_level": "E2_synthetic_second_implementation",
+  "model": "synthetic_deferred_cancel_v1",
+  "seed": 0,
+  "max_depth": 4,
+  "sequences_checked_through_first_difference": 6,
+  "bounded_search_complete": false,
+  "model_sha256": "8a827a6b9577db9f93439ea4f9fe7a459fe1098b091996afeb67274e47e0b5af",
+  "experiment_sha256": "9f8f0cb0197275ccdf736145dd3b4aa3f051c610d1c61b3c710779a257c20ed6",
+  "input": [
+    "prepare",
+    "cancel"
+  ],
+  "anomaly": true,
+  "minimized": [
+    "prepare",
+    "cancel"
+  ],
+  "oracle_validation": {
+    "oracle_matches_reference": true,
+    "reference_oracle_mismatch_indices": [],
+    "candidate_oracle_mismatch_indices": [
+      1
+    ],
+    "candidate_differs_same_step": true,
+    "reported_diff_indices": [
+      1
+    ],
+    "bug_off_clean": true,
+    "negative_control_passes": true
+  },
+  "replay_diverges": true,
+  "negative_control_passes": true,
+  "scope": "model contract only; does not describe Horizon or Mariko"
+}

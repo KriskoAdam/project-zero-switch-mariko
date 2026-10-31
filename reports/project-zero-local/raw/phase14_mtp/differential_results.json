@@ -1,0 +1,165 @@
+{
+  "states": {
+    "A": {
+      "trial_count": 3,
+      "all_device_info_equal": true,
+      "operation_capabilities_stable": true,
+      "event_capabilities_stable": true,
+      "storage_id_values": [
+        [
+          "0x00040001"
+        ],
+        [
+          "0x00040001"
+        ],
+        [
+          "0x00040001"
+        ]
+      ],
+      "count_values": [
+        3,
+        3,
+        3
+      ],
+      "all_requested_responses_ok": true,
+      "max_operation_duration_ms": 4.0
+    },
+    "B": {
+      "trial_count": 3,
+      "all_device_info_equal": true,
+      "operation_capabilities_stable": true,
+      "event_capabilities_stable": true,
+      "storage_id_values": [
+        [
+          "0x00040001"
+        ],
+        [
+          "0x00040001"
+        ],
+        [
+          "0x00040001"
+        ]
+      ],
+      "count_values": [
+        3,
+        3,
+        3
+      ],
+      "all_requested_responses_ok": true,
+      "max_operation_duration_ms": 1.0
+    },
+    "C": {
+      "trial_count": 3,
+      "all_device_info_equal": true,
+      "operation_capabilities_stable": true,
+      "event_capabilities_stable": true,
+      "storage_id_values": [
+        [
+          "0x00050001"
+        ],
+        [
+          "0x00050001"
+        ],
+        [
+          "0x00050001"
+        ]
+      ],
+      "count_values": [
+        3,
+        3,
+        3
+      ],
+      "all_requested_responses_ok": true,
+      "max_operation_duration_ms": 2.0
+    }
+  },
+  "cross_state_comparison": {
+    "states_compared": [
+      "A",
+      "B",
+      "C"
+    ],
+    "storage_id_is_session_or_mode_dependent": true,
+    "object_counts_stable": true
+  },
+  "usb_state_observations": [
+    {
+      "label": "A",
+      "captured_at": "2026-10-31T00:30:16.707+01:00",
+      "device_found": true,
+      "device": {
+        "vid": "0x057e",
+        "pid": "0x201d",
+        "manufacturer": "Nintendo",
+        "product": "Nintendo Switch"
+      },
+      "interface": {
+        "name": "MTP",
+        "class": 6,
+        "subclass": 1,
+        "protocol": 1,
+        "interface_number": 0,
+        "endpoint_count": 3
+      },
+      "source_file": "usb_A.json"
+    },
+    {
+      "label": "B",
+      "captured_at": "2026-10-31T00:30:16.758+01:00",
+      "device_found": true,
+      "device": {
+        "vid": "0x057e",
+        "pid": "0x201d",
+        "manufacturer": "Nintendo",
+        "product": "Nintendo Switch"
+      },
+      "interface": {
+        "name": "MTP",
+        "class": 6,
+        "subclass": 1,
+        "protocol": 1,
+        "interface_number": 0,
+        "endpoint_count": 3
+      },
+      "source_file": "usb_B.json"
+    },
+    {
+      "label": "C",
+      "captured_at": "2026-10-31T00:30:37.627+01:00",
+      "device_found": true,
+      "device": {
+        "vid": "0x057e",
+        "pid": "0x201d",
+        "manufacturer": "Nintendo",
+        "product": "Nintendo Switch"
+      },
+      "interface": {
+        "name": "MTP",
+        "class": 6,
+        "subclass": 1,
+        "protocol": 1,
+        "interface_number": 0,
+        "endpoint_count": 3
+      },
+      "source_file": "usb_C.json"
+    },
+    {
+      "label": "D",
+      "captured_at": "2026-10-31T00:31:10.857+01:00",
+      "device_found": false,
+      "device": null,
+      "interface": null,
+      "source_file": "usb_D.json"
+    },
+    {
+      "label": "D_recheck",
+      "captured_at": "2026-10-31T00:31:36.386+01:00",
+      "device_found": false,
+      "device": null,
+      "interface": null,
+      "source_file": "usb_D_recheck.json"
+    }
+  ],
+  "state_D_mtp_runs": 0,
+  "state_D_reason": "No USB device/interface appeared in either passive capture after user-reported reconnect; therefore no MTP command was sent."
+}

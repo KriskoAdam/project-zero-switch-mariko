@@ -1,0 +1,16 @@
+{
+  "run_id": "cancel-model-depth-4",
+  "evidence_level": "E1_synthetic_model",
+  "model": "synthetic_deferred_cancel_v1",
+  "model_sha256": "8a827a6b9577db9f93439ea4f9fe7a459fe1098b091996afeb67274e47e0b5af",
+  "max_depth": 4,
+  "sequences_checked_through_first_difference": 6,
+  "anomaly": true,
+  "minimized": [
+    "prepare",
+    "cancel"
+  ],
+  "replay_diverges": true,
+  "negative_control_passes": true,
+  "scope": "model contract only; does not describe Horizon or Mariko"
+}

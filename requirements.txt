@@ -1,0 +1,5 @@
+# Optional static-analysis helpers; use in an isolated Python virtual environment.
+capstone==5.0.9
+pyelftools==0.33
+lief==1.0.0
+construct==2.10.70

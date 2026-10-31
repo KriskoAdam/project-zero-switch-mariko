@@ -1,0 +1,23 @@
+[
+  {
+    "id": "followup-bound-local-10-2",
+    "area": "coverage",
+    "claim": "Does increasing the state-space bound reveal a new transition class?",
+    "test": "Repeat with depth + 1 and a distinct deterministic seed.",
+    "status": "generated_from_synthetic_result"
+  },
+  {
+    "id": "followup-minimized-local-20261030-3",
+    "area": "model-falsification",
+    "claim": "Does the minimized trace still fail after eliminating each operation independently?",
+    "test": "Replay every one-operation deletion and each single-parameter mutation.",
+    "status": "generated_from_synthetic_result"
+  },
+  {
+    "id": "followup-minimized-local-77-5",
+    "area": "model-falsification",
+    "claim": "Does the minimized trace still fail after eliminating each operation independently?",
+    "test": "Replay every one-operation deletion and each single-parameter mutation.",
+    "status": "generated_from_synthetic_result"
+  }
+]

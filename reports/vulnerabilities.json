@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "target": {
+    "hardware": "Nintendo Switch V2 Mariko / Tegra X1+ T210B01",
+    "firmware": "Horizon OS 23.0.1"
+  },
+  "scope_note": "Publicly documented entries only. null means the source does not establish the field. Firmware versions are original Switch HOS unless noted. A hardware fix is distinguished from an OS version fix.",
+  "sources": {
+    "switchbrew_flaws": "https://switchbrew.org/wiki/Switch_System_Flaws",
+    "switchbrew_fuses": "https://switchbrew.org/wiki/Fuse_registers",
+    "switchbrew_23_0_0": "https://switchbrew.org/wiki/23.0.0",
+    "switchbrew_23_0_1": "https://switchbrew.org/wiki/23.0.1",
+    "nintendo_advisory": "https://www.nintendo.com/security-advisories/assets/pdf/20260910e.pdf",
+    "atmosphere_fusee": "https://github.com/Atmosphere-NX/Atmosphere/blob/master/docs/components/fusee.md",
+    "nh_guide": "https://switch.hacks.guide/user_guide/getting_started",
+    "ns2jb": "https://pepsipu.com/blog/2026-10-switch2-jailbreak-ns2jb/"
+  },
+  "vulnerabilities": [
+    {
+      "id": "CVE-2018-6242 / Fusée Gelée",
+      "component": "Tegra Boot ROM RCM USB stack",
+      "affected_hardware": [
+        "early/unpatched Tegra X1 Erista Switch"
+      ],
+      "affected_firmware_versions": [
+        "Boot ROM flaw; HOS-independent on affected silicon"
+      ],
+      "fixed_firmware_versions": [],
+      "fixed_hardware": [
+        "patched Erista IROM revision",
+        "Mariko/T210B01 new Boot ROM"
+      ],
+      "required_access_level": "physical USB/RCM access",
+      "arbitrary_code_execution_documented": true,
+      "privilege_escalation_documented": true,
+      "applicable_to_mariko": false,
+      "primary_source": [
+        "switchbrew_flaws",
+        "switchbrew_fuses",
+        "atmosphere_fusee"
+      ],
+      "evidence_confidence": "high for hardware exclusion; community technical docs, not exact Switch V2 unit test",
+      "notes": "RCM mode remains present on Mariko; the vulnerable Boot ROM behavior does not."
+    },
+    {
+      "id": "CVE-2016-4657",
+      "component": "Horizon Internet Browser / WebKit",
+      "affected_hardware": [
+        "original Switch models with affected browser build; exact SoC coverage not specified by source"
+      ],
+      "affected_firmware_versions": [
+        "before HOS 2.1.0 per Switchbrew matrix"
+      ],
+      "fixed_firmware_versions": [
+        "2.1.0"
+      ],
+      "required_access_level": "browser content/user interaction; exact prerequisites not established here",
+      "arbitrary_code_execution_documented": null,
+      "privilege_escalation_documented": null,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "switchbrew_flaws"
+      ],
+      "evidence_confidence": "medium; public community patch matrix, exact Mariko applicability unspecified",
+      "notes": "Historical browser bug does not establish a current 23.0.1 entry. Switchbrew patch table leaves successful Switch exploitation result unspecified."
+    },
+    {
+      "id": "CVE-2017-7005",
+      "component": "Horizon Internet Browser / WebKit type confusion",
+      "affected_hardware": [
+        "original Switch; exact Mariko silicon applicability not established"
+      ],
+      "affected_firmware_versions": [
+        "before HOS 3.0.1 per Switchbrew matrix"
+      ],
+      "fixed_firmware_versions": [
+        "3.0.1"
+      ],
+      "required_access_level": "browser content/user interaction; exact prerequisites not established here",
+      "arbitrary_code_execution_documented": null,
+      "privilege_escalation_documented": null,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "switchbrew_flaws"
+      ],
+      "evidence_confidence": "medium; community patch matrix",
+      "notes": "No public evidence that this old issue affects HOS 23.0.1. Switchbrew patch table leaves successful Switch exploitation result unspecified."
+    },
+    {
+      "id": "CVE-2016-4622",
+      "component": "Horizon Internet Browser / WebKit",
+      "affected_hardware": [
+        "original Switch; exact Mariko silicon applicability not established"
+      ],
+      "affected_firmware_versions": [
+        "reintroduced in HOS 4.0.0"
+      ],
+      "fixed_firmware_versions": [
+        "6.1.0"
+      ],
+      "required_access_level": "browser content/user interaction; exact prerequisites not established here",
+      "arbitrary_code_execution_documented": null,
+      "privilege_escalation_documented": null,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "switchbrew_flaws"
+      ],
+      "evidence_confidence": "medium; community patch matrix",
+      "notes": "Historical regression fixed well before target version. Switchbrew patch table leaves successful Switch exploitation result unspecified."
+    },
+    {
+      "id": "CVE-2018-4441",
+      "component": "Horizon Internet Browser / WebKit",
+      "affected_hardware": [
+        "original Switch; exact Mariko silicon applicability not established"
+      ],
+      "affected_firmware_versions": [
+        "before HOS 7.0.0 per Switchbrew matrix"
+      ],
+      "fixed_firmware_versions": [
+        "7.0.0"
+      ],
+      "required_access_level": "browser content/user interaction; exact prerequisites not established here",
+      "arbitrary_code_execution_documented": null,
+      "privilege_escalation_documented": null,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "switchbrew_flaws"
+      ],
+      "evidence_confidence": "medium; community patch matrix",
+      "notes": "Historical issue only; not evidence of 23.0.1 vulnerability. Switchbrew patch table leaves successful Switch exploitation result unspecified."
+    },
+    {
+      "id": "sm:hax service access-control flaw",
+      "component": "Horizon SM service manager / userland service ACL",
+      "affected_hardware": [
+        "original Switch; model coverage not specified"
+      ],
+      "affected_firmware_versions": [
+        "before HOS 3.0.1 per Switchbrew matrix"
+      ],
+      "fixed_firmware_versions": [
+        "3.0.1"
+      ],
+      "required_access_level": "existing user process; exact launch prerequisite not specified",
+      "arbitrary_code_execution_documented": null,
+      "privilege_escalation_documented": null,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "switchbrew_flaws"
+      ],
+      "evidence_confidence": "medium; documented service access-control change, exploit-chain scope varies",
+      "notes": "Service access-control bypass is not by itself proof of kernel privilege escalation."
+    },
+    {
+      "id": "nspwn",
+      "component": "Horizon NSP/content handling and privileged memory access chain",
+      "affected_hardware": [
+        "original Switch; public summary does not establish Mariko support"
+      ],
+      "affected_firmware_versions": [
+        "up to 4.1.0 per Switchbrew matrix"
+      ],
+      "fixed_firmware_versions": [
+        "5.0.0"
+      ],
+      "required_access_level": "access to lr service / Loader path; exact initial compromise prerequisite depends on chain",
+      "arbitrary_code_execution_documented": true,
+      "privilege_escalation_documented": true,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "switchbrew_flaws"
+      ],
+      "evidence_confidence": "medium; public technical matrix, hardware applicability not pinned to T210B01",
+      "notes": "Switchbrew documents arbitrary code execution with full system privileges when lr access is available; this does not establish Mariko 23.0.1 applicability."
+    },
+    {
+      "id": "nvhax",
+      "component": "nvservices / NVIDIA GPU ioctl memory corruption",
+      "affected_hardware": [
+        "Switch hardware running affected nvservices; Mariko-specific coverage not stated"
+      ],
+      "affected_firmware_versions": [
+        "before HOS 6.2.0"
+      ],
+      "fixed_firmware_versions": [
+        "6.2.0"
+      ],
+      "required_access_level": "GPU service client plus a separate information disclosure/primitive for stronger write effect",
+      "arbitrary_code_execution_documented": true,
+      "privilege_escalation_documented": true,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "switchbrew_flaws"
+      ],
+      "evidence_confidence": "medium; specific memory corruption and fix documented, full chain not asserted",
+      "notes": "Switchbrew documents code execution under nvservices after combining memory corruption with other primitives. Sysmodule-context code execution is not by itself proof of arbitrary kernel/system privileges or a standalone chain."
+    },
+    {
+      "id": "CVE-2026-82079",
+      "component": "Local wireless ldn/lp2p service path (component mapping from Switchbrew)",
+      "affected_hardware": [
+        "Nintendo Switch family per advisory; Mariko-specific exploitation not established"
+      ],
+      "affected_firmware_versions": [
+        "pre-23.0.0 (inferred from documented fix in 23.0.0; advisory does not publish full affected-version range)"
+      ],
+      "fixed_firmware_versions": [
+        "23.0.0"
+      ],
+      "required_access_level": "proximity/local wireless attack surface per Nintendo advisory",
+      "arbitrary_code_execution_documented": null,
+      "privilege_escalation_documented": null,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "nintendo_advisory",
+        "switchbrew_23_0_0"
+      ],
+      "evidence_confidence": "medium for 23.0.0 containing fix; exact affected range and impact beyond Nintendo notice are not established",
+      "notes": "Nintendo advisory describes potential information leak from proximity-based attack; Switchbrew maps fix to ldn in 23.0.0. The pre-23.0.0 range is inferred from that fix mapping, not an explicit Nintendo range."
+    },
+    {
+      "id": "svcWaitSynchronization/svcReplyAndReceive error-cleanup UAF",
+      "component": "Horizon OS kernel synchronization-object cleanup",
+      "affected_hardware": [
+        "Original Switch; exact SoC/revision applicability not established"
+      ],
+      "affected_firmware_versions": [
+        "HOS 1.0.0-era code before 2.0.0 fix"
+      ],
+      "fixed_firmware_versions": [
+        "2.0.0"
+      ],
+      "required_access_level": "user process able to invoke synchronization syscalls and trigger a userspace page fault",
+      "arbitrary_code_execution_documented": null,
+      "privilege_escalation_documented": null,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "switchbrew_flaws"
+      ],
+      "evidence_confidence": "low-to-medium; Switchbrew says expected kernel code execution but explicitly notes not tried on real hardware",
+      "notes": "Historical kernel UAF; source caveat makes this an unverified exploitation claim, not a confirmed target chain."
+    },
+    {
+      "id": "Broadpwn (CVE-2017-9417)",
+      "component": "Broadcom Wi-Fi controller firmware",
+      "affected_hardware": [
+        "Broadcom Wi-Fi devices in general; Switch impact explicitly untested"
+      ],
+      "affected_firmware_versions": [
+        "Switch firmware before 4.0.0 according to Switchbrew fix mapping"
+      ],
+      "fixed_firmware_versions": [
+        "4.0.0"
+      ],
+      "required_access_level": "wireless proximity; precise Switch prerequisites unknown",
+      "arbitrary_code_execution_documented": null,
+      "privilege_escalation_documented": null,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "switchbrew_flaws"
+      ],
+      "evidence_confidence": "low for Switch exploitability; source explicitly says controller code execution untested on Switch",
+      "notes": "Included as wireless attack-surface reference only; not evidence of a Switch vulnerability chain."
+    },
+    {
+      "id": "Memory Controller not properly secured",
+      "component": "Tegra memory-controller MMIO and Horizon kernel isolation",
+      "affected_hardware": [
+        "original Switch Erista-era Horizon implementation; Mariko-specific applicability of the old flaw not established"
+      ],
+      "affected_firmware_versions": [
+        "initial HOS implementations; partially addressed in 2.0.0"
+      ],
+      "fixed_firmware_versions": [
+        "4.0.0 (full OS fix; 2.0.0 partial user-mapping mitigation)"
+      ],
+      "required_access_level": "ability to access memory-controller MMIO; user mapping mitigated at 2.0.0, full TZ-only control at 4.0.0",
+      "arbitrary_code_execution_documented": true,
+      "privilege_escalation_documented": true,
+      "applicable_to_mariko": null,
+      "primary_source": [
+        "switchbrew_flaws"
+      ],
+      "evidence_confidence": "medium; Switchbrew describes the old flaw and fixes, but does not establish the old vulnerable condition on Mariko silicon",
+      "notes": "Kept separate from Mariko hardware DMA/GMMU fixes; historical Switch OS defect is not a demonstrated target vulnerability."
+    }
+  ]
+}

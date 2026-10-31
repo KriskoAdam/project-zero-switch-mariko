@@ -1,0 +1,2 @@
+Command: ps -axo pid,comm (process names only)
+No process names matching mtp, openmtp, or Android File Transfer.

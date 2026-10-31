@@ -1,0 +1,302 @@
+{
+  "manifest_version": 1,
+  "created_at": "2026-10-30",
+  "project_root": "<LOCAL_PATH>",
+  "target": "Nintendo Switch V2 Switch V2 family; Mariko T210B01/Tegra214; HOS 23.0.1",
+  "host_python": ".venv/bin/python 3.14.7",
+  "scope": "offline synthetic-model experiments plus targeted public-source delta-check; no console or firmware artifacts",
+  "phase5_summary": {
+    "tests": "11/11 pass",
+    "handle_seeds": [
+      10,
+      20261030,
+      77
+    ],
+    "handle_depths": [
+      2,
+      3,
+      5
+    ],
+    "fully_exhaustive_depth3_sequences": 40,
+    "additional_sequences_after_prior_first_find": 20,
+    "cancellation_seed": 0,
+    "cancellation_depth": 4,
+    "cancellation_source_hashes": {
+      "model": "8a827a6b9577db9f93439ea4f9fe7a459fe1098b091996afeb67274e47e0b5af",
+      "experiment": "9f8f0cb0197275ccdf736145dd3b4aa3f051c610d1c61b3c710779a257c20ed6"
+    },
+    "retry_seed": 0,
+    "retry_depth": 4,
+    "retry_source_hashes": {
+      "model": "6aab62e802ec31569c785a290591c149532d587241ae99ec1be4cec416c92fe4",
+      "experiment": "f260a53c4ad00921543262942798f41f66add7ed1ad8b20eaf5f06ad4e7bdc01"
+    },
+    "public_check_date": "2026-10-30"
+  },
+  "artifacts": [
+    {
+      "path": "PROJECT_ZERO/engine/hypothesis_generator.py",
+      "sha256": "6bca67cf544e380405e3d9cedb1bb076054cb302c2485fec992ae4e6ae688881",
+      "role": "source: candidate and derived hypotheses"
+    },
+    {
+      "path": "PROJECT_ZERO/engine/hypothesis_ranker.py",
+      "sha256": "bf6e018ded664c6f8426c3f0ee40de8833dfa64f9d907e3d42517936c478d347",
+      "role": "source: hypothesis ranking"
+    },
+    {
+      "path": "PROJECT_ZERO/engine/state_space_explorer.py",
+      "sha256": "9974a73c0a2479cfcf2bbaa0636b31e7d19b9e31760e9cf991a7df085bd4fd1d",
+      "role": "source: bounded and exhaustive sequence search"
+    },
+    {
+      "path": "PROJECT_ZERO/engine/invariant_discovery.py",
+      "sha256": "b481b206e27c855004449990536c6ba3020f1f9632b1ca33f2759e7b3dde04c3",
+      "role": "source: invariant checks"
+    },
+    {
+      "path": "PROJECT_ZERO/engine/differential_engine.py",
+      "sha256": "9ef522b9090b64d4e5a86cf6ac8753677a3e5560f11eaa2868ab1d6212cda27b",
+      "role": "source: handle reference/candidate comparisons"
+    },
+    {
+      "path": "PROJECT_ZERO/engine/experiment_runner.py",
+      "sha256": "d0ec206a6c29d75087f2daa7adada0cf7e1adbd513eb0522c3bf99d32d210267",
+      "role": "source: handle experiment and minimizers"
+    },
+    {
+      "path": "PROJECT_ZERO/engine/result_validator.py",
+      "sha256": "8d39b17cb8d8652ce26e4acb377a4807a26f9496b0b7919e6e21954481e04805",
+      "role": "source: independent handle oracle validation"
+    },
+    {
+      "path": "PROJECT_ZERO/engine/discovery_database.py",
+      "sha256": "fff8ae119987a2627cfb503825f0542276f6dd065d53c622435c1d73a9ada9c2",
+      "role": "source: SQLite evidence ledger"
+    },
+    {
+      "path": "PROJECT_ZERO/engine/run_campaign.py",
+      "sha256": "abbf3278e5a82dfefe0f2fdd76511c0ba3443607ba96444e96fd0b8c84d04544",
+      "role": "source: coordinated campaign"
+    },
+    {
+      "path": "PROJECT_ZERO/models/lifecycle.py",
+      "sha256": "7148712c559b78fa9c27890b13fe84170309c28afa2bb5c1d17fc601dd87433e",
+      "role": "model: handle lifecycle; contains intentional candidate defect"
+    },
+    {
+      "path": "PROJECT_ZERO/models/cancellation.py",
+      "sha256": "8a827a6b9577db9f93439ea4f9fe7a459fe1098b091996afeb67274e47e0b5af",
+      "role": "model: cancellation; contains intentional candidate defect"
+    },
+    {
+      "path": "PROJECT_ZERO/models/retry.py",
+      "sha256": "6aab62e802ec31569c785a290591c149532d587241ae99ec1be4cec416c92fe4",
+      "role": "model: idempotent retry; contains intentional candidate defect"
+    },
+    {
+      "path": "PROJECT_ZERO/experiments/cancel_recovery.py",
+      "sha256": "9f8f0cb0197275ccdf736145dd3b4aa3f051c610d1c61b3c710779a257c20ed6",
+      "role": "experiment: cancellation enumeration and oracle"
+    },
+    {
+      "path": "PROJECT_ZERO/experiments/lost_ack_retry.py",
+      "sha256": "f260a53c4ad00921543262942798f41f66add7ed1ad8b20eaf5f06ad4e7bdc01",
+      "role": "experiment: lost-ack retry enumeration and oracle"
+    },
+    {
+      "path": "PROJECT_ZERO/tests/test_engine.py",
+      "sha256": "08e7687e0c9bfa667cabca05862134b1d50551f0efb9f93aebb2df4c2120a079",
+      "role": "test source"
+    },
+    {
+      "path": "PROJECT_ZERO/hypotheses/catalog.json",
+      "sha256": "f931cdb82759a33c0f521260291d3c99c8b7908ac58c6c2fa2a9d29920e6c91e",
+      "role": "input: 50 synthetic candidate hypotheses"
+    },
+    {
+      "path": "PROJECT_ZERO/hypotheses/phase5_followups.json",
+      "sha256": "151cbe5b05bb4373e2c5ee273396eb1784738859488a660841759c390c322861",
+      "role": "input: Phase 5 explicit retry hypothesis"
+    },
+    {
+      "path": "PROJECT_ZERO/README.md",
+      "sha256": "066007c9e21b8fbb1dd03b7d7ca72c9d67f395e64a3d0458a1aec201a6956bb0",
+      "role": "reproduction and evidence-label instructions"
+    },
+    {
+      "path": "PROJECT_ZERO/results/campaign_summary.json",
+      "sha256": "b34a513f900412f7ece3621ad23f9deedc44ed9a9550b3ecc093f571d6dcdfb2",
+      "role": "result: seeds, bounds, stop status, oracle and bug-off controls"
+    },
+    {
+      "path": "PROJECT_ZERO/results/cancel_recovery.json",
+      "sha256": "fe5d55e9a788bad4e9b660ec911fd45efdd2cc1f2531f8b2eaac81eb8f4a5273",
+      "role": "result: cancellation experiment"
+    },
+    {
+      "path": "PROJECT_ZERO/results/lost_ack_retry.json",
+      "sha256": "15aeee6f077b93c82c2495adf5f4a4e249db9d36d48a96e2a10336f73831948a",
+      "role": "result: retry experiment"
+    },
+    {
+      "path": "PROJECT_ZERO/results/local-10-2.json",
+      "sha256": "12bfdda12a38734736884a75469c710b8ffe01b0bf932b1da30a915d76b2536a",
+      "role": "result: handle BFS depth 2"
+    },
+    {
+      "path": "PROJECT_ZERO/results/local-20261030-3.json",
+      "sha256": "eaa12a2dedfc0b6483c161d8b178a819df99ed2104f0d9964c8d332a0d953d47",
+      "role": "result: handle BFS first find depth 3"
+    },
+    {
+      "path": "PROJECT_ZERO/results/local-77-5.json",
+      "sha256": "b37e2c498ebfd10455c5811f82599274fce76dea8379506d540d110f4397d791",
+      "role": "result: handle BFS first find depth 5"
+    },
+    {
+      "path": "PROJECT_ZERO/results/test_output_phase5.txt",
+      "sha256": "3c7f4bc61e36a630db018e8e8c57bfd1ee62b3f6f1c3cfa102c447790641b1ee",
+      "role": "result: test output from existing venv"
+    },
+    {
+      "path": "reports/PHASE4_FINAL_VERDICT.md",
+      "sha256": "855cab798b92b378da5ce405e3fb919874eab635a8c2b9578fe2f146a5204a3f",
+      "role": "baseline research input"
+    },
+    {
+      "path": "reports/PHASE4_GEZINE_INVESTIGATION.md",
+      "sha256": "df7da601e1ff6a771cd5fea20bae0bff8deaa056518d2eb5bdd8c0b6dd0d2b30",
+      "role": "baseline research input"
+    },
+    {
+      "path": "reports/PHASE4_MARIKO_COMPATIBILITY.md",
+      "sha256": "decd678c30e4cdda382be640b1151746082d6c89197a61b892c17ceb090923c6",
+      "role": "baseline research input"
+    },
+    {
+      "path": "reports/PHASE4_NEW_PUBLIC_RESEARCH.md",
+      "sha256": "e3e58a509d22cc89f3ee62d84dde6f69197bd7762df3b090554a3c7d86e70a68",
+      "role": "baseline research input"
+    },
+    {
+      "path": "reports/UNRESOLVED_QUESTIONS.md",
+      "sha256": "9ce33b9056d5e0b24638527395163b68254ce59ba87b8c7fe10526137be4822b",
+      "role": "baseline research input"
+    },
+    {
+      "path": "reports/vulnerabilities.json",
+      "sha256": "7530fba7b61713cf1e1820ab7817538e9ed683df3c55991f012460f2b9068bf2",
+      "role": "baseline vulnerability inventory; unchanged in Phase 5"
+    },
+    {
+      "path": "reports/ENVIRONMENT.md",
+      "sha256": "497bf27bd4e6e4c783cd35949d0300db89535d65488d2093ebb1cc9fb10b0c96",
+      "role": "baseline tool inventory"
+    },
+    {
+      "path": "reports/BINARY_ANALYSIS_READINESS.md",
+      "sha256": "c3318b5a30f48e4efb8b4375356eeb61c29892b3b61185b0e5dd87c271cafa6a",
+      "role": "baseline analysis readiness and scope"
+    }
+  ],
+  "public_sources": [
+    {
+      "url": "https://x.com/gezine_dev/status/2074894225460822503",
+      "accessed_at": "2026-10-30",
+      "source_type": "author_primary_social_post",
+      "http_observed": "403 Forbidden",
+      "claim_type": "author claim; unverified from primary endpoint",
+      "mariko_evidence": "none"
+    },
+    {
+      "url": "https://x.com/gezine_dev/status/2075682718155956275",
+      "accessed_at": "2026-10-30",
+      "source_type": "author_primary_social_post",
+      "http_observed": "403 Forbidden",
+      "claim_type": "author follow-up; exact text remains unverified from primary endpoint",
+      "mariko_evidence": "none"
+    },
+    {
+      "url": "https://x.com/gezine_dev/status/2113226316623552651",
+      "accessed_at": "2026-10-30",
+      "source_type": "author_primary_social_post",
+      "http_observed": "403 Forbidden",
+      "claim_type": "physical-cartridge claim; unverified from primary endpoint",
+      "mariko_evidence": "none"
+    },
+    {
+      "url": "https://x.com/gezine_dev/status/2113328261753385227",
+      "accessed_at": "2026-10-30",
+      "source_type": "author_primary_social_post",
+      "http_observed": "403 Forbidden",
+      "claim_type": "physical-cartridge follow-up; unverified from primary endpoint",
+      "mariko_evidence": "none"
+    },
+    {
+      "url": "https://x.com/gezine_dev/status/2100262587263037470",
+      "accessed_at": "2026-10-30",
+      "source_type": "author_primary_social_post",
+      "http_observed": "403 Forbidden",
+      "claim_type": "Switch 2 HDMI userland dump claim; unverified from primary endpoint",
+      "mariko_evidence": "none"
+    },
+    {
+      "url": "https://github.com/Gezine?tab=repositories",
+      "accessed_at": "2026-10-30",
+      "source_type": "author_primary_repository_listing",
+      "http_observed": "page fetched successfully; numeric status not exposed",
+      "claim_type": "visible repository-listing check, bounded negative result",
+      "mariko_evidence": "none"
+    },
+    {
+      "url": "https://gitlab.com/pepsipu/ns2jb",
+      "accessed_at": "2026-10-30",
+      "source_type": "author_primary_repository",
+      "http_observed": "page fetched successfully; numeric status not exposed",
+      "claim_type": "repo labels project Switch 2; no Mariko compatibility evidence in displayed project metadata",
+      "mariko_evidence": "none"
+    },
+    {
+      "url": "https://www.nintendo.com/en-gb/Support/Troubleshooting/Nintendo-Switch-System-Update-Information-1445507.html",
+      "accessed_at": "2026-10-30",
+      "source_type": "Nintendo_official_update_page",
+      "http_observed": "page fetched successfully; numeric status not exposed",
+      "claim_type": "23.0.1 remains latest listed; changelog describes functional fix",
+      "mariko_evidence": "none"
+    },
+    {
+      "url": "https://switchbrew.org/wiki/23.0.1",
+      "accessed_at": "2026-10-30",
+      "source_type": "community_reverse_engineering_release_record",
+      "http_observed": "page fetched successfully; numeric status not exposed",
+      "claim_type": "23.0.1 security-flaws field blank; sdb update listed",
+      "mariko_evidence": "none"
+    },
+    {
+      "url": "https://switchbrew.org/wiki/23.0.0",
+      "accessed_at": "2026-10-30",
+      "source_type": "community_reverse_engineering_release_record",
+      "http_observed": "page fetched successfully; numeric status not exposed",
+      "claim_type": "ldn/security update mapped to 23.0.0",
+      "mariko_evidence": "indirect"
+    },
+    {
+      "url": "https://www.nintendo.com/security-advisories/en/index.html",
+      "accessed_at": "2026-10-30",
+      "source_type": "Nintendo_official_advisory_index",
+      "http_observed": "page fetched successfully; numeric status not exposed",
+      "claim_type": "2026-09-10 proximity information leak advisory remains listed; no new entry found",
+      "mariko_evidence": "none"
+    },
+    {
+      "url": "https://switch2unlock.com/en/news/",
+      "accessed_at": "2026-10-30",
+      "source_type": "secondary_timeline",
+      "http_observed": "page fetched successfully; numeric status not exposed",
+      "claim_type": "reports Gezine exploit unreleased and Switch 2 demos; not independent technical validation",
+      "mariko_evidence": "none"
+    }
+  ],
+  "security_note": "Synthetic candidates deliberately contain bugs. E1/E2 findings apply only to these toy models and do not evidence Horizon, Switch, or Mariko behavior."
+}

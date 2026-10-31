@@ -1,0 +1,49 @@
++-o MTP@0  <class IOUSBHostInterface, id 0x10003ce44, registered, matched, active, busy 0 (5 ms), retain 5>
+    {
+      "USBSpeed" = 3
+      "iInterface" = 4
+      "bInterfaceProtocol" = 1
+      "bAlternateSetting" = 0
+      "idProduct" = 8221
+      "bcdDevice" = 256
+      "USB Product Name" = "Nintendo Switch"
+      "locationID" = 1179648
+      "bInterfaceClass" = 6
+      "bInterfaceSubClass" = 1
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "USBPortType" = 5
+      "kUSBString" = "MTP"
+      "bInterfaceNumber" = 0
+      "bConfigurationValue" = 1
+      "USB Vendor Name" = "Nintendo"
+      "idVendor" = 1406
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "bNumEndpoints" = 3
+      "USB Serial Number" = "[REDACTED_SERIAL]"
+    }
+    
+
++-o IOUSBHostInterface@0  <class IOUSBHostInterface, id 0x10003cb10, !registered, !matched, active, busy 0, retain 8>
+    {
+      "USBPortType" = 2
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "USB Vendor Name" = "Apple"
+      "bcdDevice" = 1061
+      "USBSpeed" = 3
+      "idProduct" = 32789
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb","com.apple.developer.driverkit.builtin"))
+      "bInterfaceSubClass" = 0
+      "bConfigurationValue" = 1
+      "locationID" = 1048576
+      "USB Product Name" = "USB2.0 Hub"
+      "UsbExclusiveOwner" = "AppleUSB20Hub_32789"
+      "bInterfaceProtocol" = 0
+      "iInterface" = 0
+      "bAlternateSetting" = 0
+      "idVendor" = 1452
+      "bInterfaceNumber" = 0
+      "bInterfaceClass" = 9
+      "bNumEndpoints" = 1
+    }
+    
+

@@ -1,0 +1,83 @@
+{
+  "source": "physical Nintendo Switch USB MTP response",
+  "observed_at": "2026-10-31T00:21:50.827+0100",
+  "library": {
+    "name": "libmtp",
+    "version": "1.1.23",
+    "source_archive_sha256": "74a2b6e8cb4a0304e95b995496ea3ac644c29371649b892b856e22f12a0bdeed"
+  },
+  "operation": {
+    "kind": "operation",
+    "operation": "GetDeviceInfo",
+    "operation_code": "0x1001",
+    "declared_supported": true,
+    "performed": true,
+    "started_at": "2026-10-31T00:21:50.827+0100",
+    "finished_at": "2026-10-31T00:21:50.827+0100",
+    "response_code": "0x2001",
+    "response_name": "OK"
+  },
+  "data": {
+    "kind": "device_info",
+    "standard_version": 100,
+    "vendor_extension_id": "0xffffffff",
+    "vendor_extension_version": 110,
+    "vendor_extension_description": "nintendo.com: 1.0; ",
+    "functional_mode": 0,
+    "manufacturer": "Nintendo",
+    "model": "Nintendo Switch",
+    "device_version": "23.0.1",
+    "operations_supported": [
+      {
+        "code": "0x1001",
+        "name": "GetDeviceInfo"
+      },
+      {
+        "code": "0x1002",
+        "name": "OpenSession"
+      },
+      {
+        "code": "0x1003",
+        "name": "CloseSession"
+      },
+      {
+        "code": "0x1004",
+        "name": "GetStorageIDs"
+      },
+      {
+        "code": "0x1005",
+        "name": "GetStorageInfo"
+      },
+      {
+        "code": "0x1006",
+        "name": "GetNumObjects"
+      },
+      {
+        "code": "0x1007",
+        "name": "GetObjectHandles"
+      },
+      {
+        "code": "0x1008",
+        "name": "GetObjectInfo"
+      },
+      {
+        "code": "0x1009",
+        "name": "GetObject"
+      },
+      {
+        "code": "0x100a",
+        "name": "GetThumb"
+      }
+    ],
+    "events_supported": [
+      "0x4002",
+      "0x4003",
+      "0x4004",
+      "0x4005",
+      "0x4007",
+      "0x400c"
+    ],
+    "device_properties_supported": []
+  },
+  "serial_number": "redacted from stored evidence"
+}

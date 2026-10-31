@@ -1,0 +1,32 @@
+# Local environments and generated outputs
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.log
+*.tmp
+*.core
+*.dSYM/
+*.o
+*.a
+*.so
+*.dylib
+*.elf
+*.nro
+*.nacp
+*.nsp
+*.xci
+*.nca
+*.tik
+*.key
+*.bin
+*.rom
+*.romfs
+*.sqlite3-shm
+*.sqlite3-wal
+# Local/private artifacts
+private/
+console-dumps/
+firmware/
+secrets/

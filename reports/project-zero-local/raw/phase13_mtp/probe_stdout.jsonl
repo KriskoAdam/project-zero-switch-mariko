@@ -1,0 +1,6 @@
+LIBMTP LIBMTP_Detect_Raw_Devices[700]: Device 0 (VID=057e and PID=201d) is a Nintendo Switch / Switch Lite.
+{"operation":"GetDeviceInfo (during Open_Raw_Device)","operation_code":"0x1001","started_at":"2026-10-31T00:19:31.056+0100","finished_at":"2026-10-31T00:19:31.103+0100","libmtp_status":0}
+{"device":{"manufacturer":"Nintendo","model":"Nintendo Switch","device_version":"23.0.1"}}
+{"operation":"GetStorageIDs + GetStorageInfo (LIBMTP_Get_Storage)","operation_code":"0x1004/0x1005","started_at":"2026-10-31T00:19:31.103+0100","finished_at":"2026-10-31T00:19:31.105+0100","libmtp_status":0}
+{"storage_id":"0x00030001","storage_type":1,"filesystem_type":2,"access_capability":1,"max_capacity":"18446744073709551615","free_space_bytes":"18446744073709551615","free_space_objects":"4294967295","description":"Album","volume_identifier":""}
+{"operation":"GetNumObjects","operation_code":"0x1006","started_at":"2026-10-31T00:19:31.105+0100","finished_at":"2026-10-31T00:19:31.105+0100","libmtp_status":-1,"storage_id":"0x00030001"}

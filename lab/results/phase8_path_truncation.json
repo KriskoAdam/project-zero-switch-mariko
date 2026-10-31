@@ -1,0 +1,30 @@
+{
+  "experiment": "libnx_fsdev_getfspath_path_boundary",
+  "classification": "host_source_behavior_not_switch_vulnerability",
+  "source_commit_recorded_by_project": "b156b4774fb2df7b93402169509266da7547fc4c",
+  "source_file": "references/vendor/libnx_fs_dev.c",
+  "source_sha256": "6a0138df373ffca4d1237854b5a3cd24742fc4ee696a122c4daeae2cf83ca2b4",
+  "libnx_fs_header_sha256": "670740e6228674a0bb9d2cb1d4230a230d6cc867f423a68df827c083d4f24504",
+  "newlib_limits_header_sha256": "e041fa4ea0dbef6e8bd41856b85f4bb5e85c5d5867ba21063763c6f68f77bdc7",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "reproduction_command": ".venv/bin/python scripts/phase8_path_truncation_test.py",
+  "sanitizers": [
+    "AddressSanitizer",
+    "UndefinedBehaviorSanitizer"
+  ],
+  "input_domain": "absolute ASCII path-shaped sweep 0..1023 plus 10000 deterministic ASCII content/length mutations",
+  "mutation_seed": "0x50484138",
+  "fixpath_stub_scope": "accepts and bounded-copies supplied strings; it does not validate or normalize; full UTF-8/device/cwd path resolver not included and random mutations are not all valid under it",
+  "reproducer_minimized_input": "/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+  "minimal_length_bytes": 769,
+  "observed_output_length_bytes": 768,
+  "getfspath_return": 0,
+  "output_equals_input": false,
+  "stdout": "first_successful_truncation_input=769 output_bytes=768 return=0\nmax_swept_input=1023 destination_capacity=769\nseeded_mutations=10000 seed=0x50484138\n",
+  "stderr": "",
+  "limits": [
+    "Host-only extracted function test",
+    "No HOS/Mariko artifact or runtime",
+    "No security impact demonstrated"
+  ]
+}

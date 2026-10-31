@@ -1,0 +1,142 @@
+{
+  "source": "physical Nintendo Switch USB MTP responses; no object handles or object contents requested",
+  "declared_operations": [
+    {
+      "code": "0x1001",
+      "name": "GetDeviceInfo"
+    },
+    {
+      "code": "0x1002",
+      "name": "OpenSession"
+    },
+    {
+      "code": "0x1003",
+      "name": "CloseSession"
+    },
+    {
+      "code": "0x1004",
+      "name": "GetStorageIDs"
+    },
+    {
+      "code": "0x1005",
+      "name": "GetStorageInfo"
+    },
+    {
+      "code": "0x1006",
+      "name": "GetNumObjects"
+    },
+    {
+      "code": "0x1007",
+      "name": "GetObjectHandles"
+    },
+    {
+      "code": "0x1008",
+      "name": "GetObjectInfo"
+    },
+    {
+      "code": "0x1009",
+      "name": "GetObject"
+    },
+    {
+      "code": "0x100a",
+      "name": "GetThumb"
+    }
+  ],
+  "attempted_operations": [
+    {
+      "kind": "operation",
+      "operation": "GetDeviceInfo",
+      "operation_code": "0x1001",
+      "declared_supported": true,
+      "performed": true,
+      "started_at": "2026-10-31T00:21:50.827+0100",
+      "finished_at": "2026-10-31T00:21:50.827+0100",
+      "response_code": "0x2001",
+      "response_name": "OK"
+    },
+    {
+      "kind": "operation",
+      "operation": "GetStorageIDs",
+      "operation_code": "0x1004",
+      "declared_supported": true,
+      "performed": true,
+      "started_at": "2026-10-31T00:21:50.827+0100",
+      "finished_at": "2026-10-31T00:21:50.828+0100",
+      "response_code": "0x2001",
+      "response_name": "OK"
+    },
+    {
+      "kind": "operation",
+      "operation": "GetStorageInfo",
+      "operation_code": "0x1005",
+      "declared_supported": true,
+      "performed": true,
+      "started_at": "2026-10-31T00:21:50.828+0100",
+      "finished_at": "2026-10-31T00:21:50.829+0100",
+      "response_code": "0x2001",
+      "response_name": "OK"
+    },
+    {
+      "kind": "operation",
+      "operation": "GetNumObjects (all formats, root)",
+      "operation_code": "0x1006",
+      "declared_supported": true,
+      "performed": true,
+      "started_at": "2026-10-31T00:21:50.829+0100",
+      "finished_at": "2026-10-31T00:21:50.829+0100",
+      "response_code": "0x2001",
+      "response_name": "OK"
+    }
+  ],
+  "get_num_objects_rejected_parameter_attempt": {
+    "operation": "GetNumObjects",
+    "operation_code": "0x1006",
+    "declared_supported": true,
+    "performed": true,
+    "parameters": {
+      "storage_id": "0x00030001",
+      "format_code": "0x00000000",
+      "association_handle": "0x00000000"
+    },
+    "libmtp_custom_operation_return": -1,
+    "response_code": "0x2009",
+    "response_name": "InvalidObjectHandle",
+    "time": "2026-10-31T00:19:31.105+0100",
+    "raw_evidence": "probe_stdout.jsonl and probe_ptp_debug.txt",
+    "follow_up": "A documented root-parent query with association_handle 0xffffffff succeeded; no retry with the rejected parameters was made."
+  },
+  "get_num_objects_root_result": [
+    {
+      "kind": "object_count",
+      "storage_id": "0x00030001",
+      "format_code": "0x0000",
+      "association_handle": "0xffffffff",
+      "response_code": "0x2001",
+      "count": 3
+    }
+  ],
+  "device_property_requests": [
+    {
+      "operation": "GetDevicePropDesc",
+      "operation_code": "0x1014",
+      "declared_supported": false,
+      "performed": false,
+      "reason": "No DevicePropertiesSupported and operation absent from GetDeviceInfo."
+    },
+    {
+      "operation": "GetDevicePropValue",
+      "operation_code": "0x1015",
+      "declared_supported": false,
+      "performed": false,
+      "reason": "No DevicePropertiesSupported and operation absent from GetDeviceInfo."
+    }
+  ],
+  "explicitly_not_performed": [
+    "GetObjectHandles",
+    "GetObjectInfo",
+    "GetObject",
+    "GetThumb",
+    "GetDevicePropDesc",
+    "GetDevicePropValue"
+  ]
+}

@@ -1,0 +1,37 @@
+name: Reproduction or evidence correction
+description: Reproduce a result or correct a specific statement
+labels: ["reproducibility", "evidence-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: "Remove personal paths, serials, MAC addresses, private IPs, tokens, and proprietary artifacts."
+  - type: input
+    id: claim
+    attributes:
+      label: Claim/report section
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Hardware, firmware, and context
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Exact reproduction steps and tool versions
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Sanitized output and hashes
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Limitations and alternative explanations
+    validations:
+      required: true

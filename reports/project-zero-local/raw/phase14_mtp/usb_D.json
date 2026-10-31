@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-10-31T00:31:10.857+01:00",
+  "label": "D",
+  "commands": [
+    "/usr/sbin/ioreg -r -c IOUSBHostDevice -l -w0",
+    "/usr/sbin/ioreg -r -c IOUSBHostInterface -l -w0"
+  ],
+  "device_found": false,
+  "device": null,
+  "interface": null,
+  "raw_files": [
+    "D_usb_devices.txt",
+    "D_usb_interfaces.txt"
+  ]
+}

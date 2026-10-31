@@ -1,0 +1,27 @@
+{
+  "captured_at": "2026-10-31T00:30:16.707+01:00",
+  "label": "A",
+  "commands": [
+    "/usr/sbin/ioreg -r -c IOUSBHostDevice -l -w0",
+    "/usr/sbin/ioreg -r -c IOUSBHostInterface -l -w0"
+  ],
+  "device_found": true,
+  "device": {
+    "vid": "0x057e",
+    "pid": "0x201d",
+    "manufacturer": "Nintendo",
+    "product": "Nintendo Switch"
+  },
+  "interface": {
+    "name": "MTP",
+    "class": 6,
+    "subclass": 1,
+    "protocol": 1,
+    "interface_number": 0,
+    "endpoint_count": 3
+  },
+  "raw_files": [
+    "A_usb_devices.txt",
+    "A_usb_interfaces.txt"
+  ]
+}

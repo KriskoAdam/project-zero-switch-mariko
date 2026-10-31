@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-10-31T00:31:36.386+01:00",
+  "label": "D_recheck",
+  "commands": [
+    "/usr/sbin/ioreg -r -c IOUSBHostDevice -l -w0",
+    "/usr/sbin/ioreg -r -c IOUSBHostInterface -l -w0"
+  ],
+  "device_found": false,
+  "device": null,
+  "interface": null,
+  "raw_files": [
+    "D_recheck_usb_devices.txt",
+    "D_recheck_usb_interfaces.txt"
+  ]
+}

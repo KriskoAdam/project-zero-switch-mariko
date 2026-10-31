@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Responsible disclosure
+    url: https://www.nintendo.com/security-advisories/
+    about: Do not post a working vulnerability or sensitive details publicly; use the vendor's current official reporting route.

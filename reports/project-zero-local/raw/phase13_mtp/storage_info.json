@@ -1,0 +1,33 @@
+{
+  "source": "physical Nintendo Switch USB MTP responses",
+  "storage_ids_operation": {
+    "kind": "operation",
+    "operation": "GetStorageIDs",
+    "operation_code": "0x1004",
+    "declared_supported": true,
+    "performed": true,
+    "started_at": "2026-10-31T00:21:50.827+0100",
+    "finished_at": "2026-10-31T00:21:50.828+0100",
+    "response_code": "0x2001",
+    "response_name": "OK"
+  },
+  "storage_ids": [
+    "0x00030001"
+  ],
+  "storage_info": [
+    {
+      "kind": "storage_info",
+      "storage_id": "0x00030001",
+      "response_code": "0x2001",
+      "storage_type": 1,
+      "filesystem_type": 2,
+      "access_capability": 1,
+      "max_capacity": "18446744073709551615",
+      "free_space_bytes": "18446744073709551615",
+      "free_space_in_images": 4294967295,
+      "description": "Album",
+      "volume_label": ""
+    }
+  ],
+  "interpretation": "Capacity values of all ones are device-reported sentinel values; they do not establish actual capacity."
+}

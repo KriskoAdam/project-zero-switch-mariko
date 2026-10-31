@@ -1,0 +1,125 @@
++-o IOUSBHostInterface@0  <class IOUSBHostInterface, id 0x10003cd17, registered, matched, active, busy 0 (36 ms), retain 11>
+  | {
+  |   "USBSpeed" = 3
+  |   "iInterface" = 0
+  |   "bInterfaceProtocol" = 0
+  |   "bAlternateSetting" = 0
+  |   "idProduct" = 8192
+  |   "bcdDevice" = 256
+  |   "USB Product Name" = "Nintendo Switch"
+  |   "locationID" = 1179648
+  |   "bInterfaceClass" = 3
+  |   "bInterfaceSubClass" = 0
+  |   "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+  |   "UsbExclusiveOwner" = "AppleUserUSBHostHIDDevice"
+  |   "USBPortType" = 5
+  |   "bConfigurationValue" = 1
+  |   "bInterfaceNumber" = 0
+  |   "USB Vendor Name" = "Nintendo"
+  |   "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+  |   "idVendor" = 1406
+  |   "IODEXTMatchCount" = 1
+  |   "bNumEndpoints" = 1
+  |   "USB Serial Number" = "[REDACTED_SERIAL]"
+  | }
+  | 
+  +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x10003cd19, registered, matched, active, busy 0 (11 ms), retain 13>
+    | {
+    |   "kOSBundleDextUniqueIdentifier" = <b796d15d9354eae826f370c78da5a69a0107352f2c064353231d0efec890df26>
+    |   "PrimaryUsagePage" = 6
+    |   "MaxInputReportSize" = 1
+    |   "IOUserClientClass" = "IOHIDLibUserClient"
+    |   "VersionNumber" = 256
+    |   "VendorID" = 1406
+    |   "ReportDescriptor" = <05060920a1010920a100050609201581257f750895018106c0c0>
+    |   "DebugState" = {"InputReportCount"=132,"InputReportTime"=46939166}
+    |   "IOUserServerOneProcess" = Yes
+    |   "BootProtocol" = 0
+    |   "MaxFeatureReportSize" = 0
+    |   "Product" = "Nintendo Switch"
+    |   "SerialNumber" = "[REDACTED_SERIAL]"
+    |   "Transport" = "USB"
+    |   "Elements" = ({"ReportID"=0,"ElementCookie"=1,"CollectionType"=1,"Type"=513,"VariableSize"=0,"Elements"=({"ReportID"=0,"ElementCookie"=2,"CollectionType"=0,"Type"=513,"VariableSize"=0,"Elements"=({"VariableSize"=0,"UnitExponent"=0,"IsRelative"=Yes,"UsagePage"=6,"Max"=127,"IsArray"=No,"Type"=1,"Size"=8,"Min"=18446744073709551489,"Flags"=6,"ReportID"=0,"Usage"=32,"ReportCount"=1,"Unit"=0,"HasNullState"=No,"ReportSize"=8,"HasPreferredState"=Yes,"IsNonLinear"=No,"ScaledMin"=18446744073709551489,"IsWrapping"=No,"ScaledMax"=127,"ElementCookie"=5}),"UsagePage"=6,"Usage"=32}),"UsagePage"=6,"Usage"=32},{"VariableSize"=0,"UnitExponent"=0,"IsRelative"=No,"UsagePage"=0,"Max"=0,"IsArray"=Yes,"Type"=5,"Size"=0,"Min"=0,"Flags"=0,"ReportID"=0,"Usage"=18446744073709551615,"ReportCount"=1,"Unit"=0,"HasNullState"=No,"ReportSize"=0,"HasPreferredState"=Yes,"IsNonLinear"=No,"ScaledMin"=0,"IsWrapping"=No,"ScaledMax"=0,"ElementCookie"=4},{"VariableSize"=0,"UnitExponent"=0,"IsRelative"=No,"UsagePage"=0,"Max"=1,"IsArray"=Yes,"Type"=5,"Size"=1,"Min"=0,"Flags"=0,"ReportID"=0,"Usage"=0,"ReportCount"=1,"Unit"=0,"HasNullState"=No,"ReportSize"=1,"HasPreferredState"=Yes,"IsNonLinear"=No,"ScaledMin"=0,"IsWrapping"=No,"ScaledMax"=1,"ElementCookie"=3})
+    |   "IOServiceDEXTEntitlements" = "com.apple.developer.driverkit.family.hid.device"
+    |   "IOUserClasses" = ("AppleUserUSBHostHIDDevice","IOUserUSBHostHIDDevice","IOUserHIDDevice","IOHIDDevice","IOService","OSObject")
+    |   "Manufacturer" = "Nintendo"
+    |   "IOUserServerCDHash" = "c1f9f34e045f400acaeb6a4fce11f184ac894e22"
+    |   "ProductID" = 8192
+    |   "RegisterService" = No
+    |   "DeviceUsagePairs" = ({"DeviceUsagePage"=6,"DeviceUsage"=32})
+    |   "IOPowerManagement" = {"CapabilityFlags"=2,"MaxPowerState"=3,"CurrentPowerState"=3}
+    |   "IOUserServerName" = "com.apple.driverkit.AppleUserHIDDrivers"
+    |   "ReportInterval" = 64000
+    |   "InputReportElements" = ({"ReportID"=0,"ElementCookie"=6,"Size"=8,"ReportCount"=1,"Type"=1,"VariableSize"=0,"UsagePage"=0,"ReportSize"=8,"Usage"=0})
+    |   "IOMatchedPersonality" = {"IOClass"="AppleUserHIDDevice","CFBundleIdentifier"="com.apple.AppleUserHIDDrivers","IOProviderClass"="IOUSBHostInterface","IOUserServerCDHash"="c1f9f34e045f400acaeb6a4fce11f184ac894e22","IOProbeScore"=1,"bInterfaceSubClass"=0,"IOUserServerName"="com.apple.driverkit.AppleUserHIDDrivers","HIDDefaultBehavior"="","kOSBundleDextUniqueIdentifier"=<b796d15d9354eae826f370c78da5a69a0107352f2c064353231d0efec890df26>,"CFBundleIdentifierKernel"="com.apple.iokit.IOHIDFamily","IOUserServerOneProcess"=Yes,"bInterfaceClass"=3,"IOUserClass"="AppleUserUSBHostHIDDevice"}
+    |   "CFBundleIdentifier" = "com.apple.AppleUserHIDDrivers"
+    |   "MaxOutputReportSize" = 0
+    |   "IOCFPlugInTypes" = {"FA12FA38-6F1A-11D4-BA0C-0005028F18D5"="IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin","40A57A4E-26A0-11D8-9295-000A958A2C78"="IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin","7DDEECA8-A7B4-11DA-8A0E-0014519758EF"="IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin"}
+    |   "IOProviderClass" = "IOUSBHostInterface"
+    |   "IOUserClass" = "AppleUserUSBHostHIDDevice"
+    |   "LocationID" = 1179648
+    |   "IOReportLegendPublic" = Yes
+    |   "CFBundleIdentifierKernel" = "com.apple.iokit.IOHIDFamily"
+    |   "IOClass" = "AppleUserHIDDevice"
+    |   "PrimaryUsage" = 32
+    |   "HIDDefaultBehavior" = ""
+    |   "CountryCode" = 0
+    |   "RequestTimeout" = 5000000
+    |   "bInterfaceSubClass" = 0
+    |   "IOMatchCategory" = "IODefaultMatchCategory"
+    |   "IOProbeScore" = 50001
+    |   "IOReportLegend" = ({"IOReportGroupName"="IOHIDDevice Input Report Errors","IOReportChannels"=((0,4295098369,"Report 0")),"IOReportChannelInfo"={"IOReportChannelUnit"=0},"IOReportSubGroupName"="Input Report IDs"})
+    |   "bInterfaceClass" = 3
+    |   "HIDDKStart" = Yes
+    | }
+    | 
+    +-o IOHIDInterface  <class IOHIDInterface, id 0x10003cd20, registered, matched, active, busy 0 (8 ms), retain 6>
+        {
+          "Transport" = "USB"
+          "BootProtocol" = 0
+          "HIDDefaultBehavior" = ""
+          "Manufacturer" = "Nintendo"
+          "Product" = "Nintendo Switch"
+          "MaxInputReportSize" = 1
+          "DeviceUsagePairs" = ({"DeviceUsagePage"=6,"DeviceUsage"=32})
+          "DebugState" = {"ReleasedBuffers"=0,"ReportAvailableCalls"=0,"ReportAvailableRuns"=0,"CreatedBuffers"=0}
+          "MaxOutputReportSize" = 0
+          "ReportDescriptor" = <05060920a1010920a100050609201581257f750895018106c0c0>
+          "CountryCode" = 0
+          "VendorID" = 1406
+          "VersionNumber" = 256
+          "IOServiceDEXTEntitlements" = ("com.apple.developer.driverkit.transport.hid")
+          "PrimaryUsage" = 32
+          "LocationID" = 1179648
+          "ProductID" = 8192
+          "SerialNumber" = "[REDACTED_SERIAL]"
+          "ReportInterval" = 64000
+          "PrimaryUsagePage" = 6
+          "MaxFeatureReportSize" = 0
+        }
+        
+
++-o IOUSBHostInterface@0  <class IOUSBHostInterface, id 0x10003cb10, !registered, !matched, active, busy 0, retain 8>
+    {
+      "USBPortType" = 2
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "USB Vendor Name" = "Apple"
+      "bcdDevice" = 1061
+      "USBSpeed" = 3
+      "idProduct" = 32789
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb","com.apple.developer.driverkit.builtin"))
+      "bInterfaceSubClass" = 0
+      "bConfigurationValue" = 1
+      "locationID" = 1048576
+      "USB Product Name" = "USB2.0 Hub"
+      "UsbExclusiveOwner" = "AppleUSB20Hub_32789"
+      "bInterfaceProtocol" = 0
+      "iInterface" = 0
+      "bAlternateSetting" = 0
+      "idVendor" = 1452
+      "bInterfaceNumber" = 0
+      "bInterfaceClass" = 9
+      "bNumEndpoints" = 1
+    }
+    
+

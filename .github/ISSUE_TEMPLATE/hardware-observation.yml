@@ -1,0 +1,37 @@
+name: Hardware compatibility observation
+description: Record a carefully scoped hardware/firmware observation
+labels: ["hardware-compatibility", "firmware-scope"]
+body:
+  - type: markdown
+    attributes:
+      value: "Never post serials, keys, private captures, or personally identifying device details."
+  - type: input
+    id: model
+    attributes:
+      label: Retail model/revision
+    validations:
+      required: true
+  - type: input
+    id: soc
+    attributes:
+      label: SoC and how it was established
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: OS version and how it was established
+    validations:
+      required: true
+  - type: textarea
+    id: procedure
+    attributes:
+      label: Standard, non-invasive procedure
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Sanitized observation and evidence class
+    validations:
+      required: true

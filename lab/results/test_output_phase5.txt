@@ -1,0 +1,42 @@
+test_cancellation_model_finds_and_minimizes_distinct_anomaly (test_engine.DiscoveryEngineTests.test_cancellation_model_finds_and_minimizes_distinct_anomaly) ... ok
+test_catalog_has_forty_distinct_hypotheses (test_engine.DiscoveryEngineTests.test_catalog_has_forty_distinct_hypotheses) ... ok
+test_clean_candidate_is_differentially_equivalent_bounded (test_engine.DiscoveryEngineTests.test_clean_candidate_is_differentially_equivalent_bounded) ... ok
+test_close_order_commutes_for_distinct_resources (test_engine.DiscoveryEngineTests.test_close_order_commutes_for_distinct_resources) ... ok
+test_exhaustive_depth_three_checks_all_distinct_sequences (test_engine.DiscoveryEngineTests.test_exhaustive_depth_three_checks_all_distinct_sequences) ... ok
+test_explorer_finds_planted_model_defect (test_engine.DiscoveryEngineTests.test_explorer_finds_planted_model_defect) ... ok
+test_invariant_checker_falsifies_invalid_close_contract (test_engine.DiscoveryEngineTests.test_invariant_checker_falsifies_invalid_close_contract) ... ok
+test_lost_ack_retry_experiment_has_oracle_and_negative_control (test_engine.DiscoveryEngineTests.test_lost_ack_retry_experiment_has_oracle_and_negative_control) ... ok
+test_minimizer_returns_deletion_minimal_counterexample (test_engine.DiscoveryEngineTests.test_minimizer_returns_deletion_minimal_counterexample) ... ok
+test_seeded_property_sequences_match_when_bug_disabled (test_engine.DiscoveryEngineTests.test_seeded_property_sequences_match_when_bug_disabled) ... ok
+test_validator_replays_and_bug_off_control_passes (test_engine.DiscoveryEngineTests.test_validator_replays_and_bug_off_control_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.013s
+
+OK
+{
+  "run_id": "lost-ack-retry-depth-4",
+  "model": "synthetic_idempotent_retry_v1",
+  "seed": 0,
+  "max_depth": 4,
+  "sequences_checked": 121,
+  "search_complete": true,
+  "anomalous_sequences": 10,
+  "source_sha256": "f260a53c4ad00921543262942798f41f66add7ed1ad8b20eaf5f06ad4e7bdc01",
+  "model_sha256": "6aab62e802ec31569c785a290591c149532d587241ae99ec1be4cec416c92fe4",
+  "input": [
+    "send",
+    "lose_ack",
+    "retry"
+  ],
+  "minimized": [
+    "send",
+    "lose_ack",
+    "retry"
+  ],
+  "reference_matches_oracle": true,
+  "candidate_differs_same_step": true,
+  "bug_off_clean": true,
+  "evidence_level": "E2_synthetic_second_implementation",
+  "scope": "synthetic contract only; intentionally faulty candidate; no Horizon/Switch/Mariko evidence"
+}

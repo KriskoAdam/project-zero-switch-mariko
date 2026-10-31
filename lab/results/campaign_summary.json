@@ -1,0 +1,227 @@
+{
+  "campaign": "PROJECT_ZERO local synthetic model campaign",
+  "evidence_level": "E1_with_E2_oracle_replay",
+  "source_hash": "fecf899fe54a401f181616b15ad47fc694e3e32e82a2437e94d7c8127f63ea50",
+  "cancellation_experiment": {
+    "run_id": "cancel-model-depth-4",
+    "evidence_level": "E2_synthetic_second_implementation",
+    "model": "synthetic_deferred_cancel_v1",
+    "seed": 0,
+    "max_depth": 4,
+    "sequences_checked_through_first_difference": 6,
+    "bounded_search_complete": false,
+    "model_sha256": "8a827a6b9577db9f93439ea4f9fe7a459fe1098b091996afeb67274e47e0b5af",
+    "experiment_sha256": "9f8f0cb0197275ccdf736145dd3b4aa3f051c610d1c61b3c710779a257c20ed6",
+    "input": [
+      "prepare",
+      "cancel"
+    ],
+    "anomaly": true,
+    "minimized": [
+      "prepare",
+      "cancel"
+    ],
+    "oracle_validation": {
+      "oracle_matches_reference": true,
+      "reference_oracle_mismatch_indices": [],
+      "candidate_oracle_mismatch_indices": [
+        1
+      ],
+      "candidate_differs_same_step": true,
+      "reported_diff_indices": [
+        1
+      ],
+      "bug_off_clean": true,
+      "negative_control_passes": true
+    },
+    "replay_diverges": true,
+    "negative_control_passes": true,
+    "scope": "model contract only; does not describe Horizon or Mariko"
+  },
+  "retry_experiment": {
+    "run_id": "lost-ack-retry-depth-4",
+    "model": "synthetic_idempotent_retry_v1",
+    "seed": 0,
+    "max_depth": 4,
+    "sequences_checked": 121,
+    "search_complete": true,
+    "anomalous_sequences": 10,
+    "source_sha256": "f260a53c4ad00921543262942798f41f66add7ed1ad8b20eaf5f06ad4e7bdc01",
+    "model_sha256": "6aab62e802ec31569c785a290591c149532d587241ae99ec1be4cec416c92fe4",
+    "input": [
+      "send",
+      "lose_ack",
+      "retry"
+    ],
+    "minimized": [
+      "send",
+      "lose_ack",
+      "retry"
+    ],
+    "reference_matches_oracle": true,
+    "candidate_differs_same_step": true,
+    "bug_off_clean": true,
+    "evidence_level": "E2_synthetic_second_implementation",
+    "scope": "synthetic contract only; intentionally faulty candidate; no Horizon/Switch/Mariko evidence"
+  },
+  "depth3_exhaustive": {
+    "complete": true,
+    "distinct_sequences_checked": 40,
+    "anomalous_sequences": 1,
+    "first_find_previous_count": 20,
+    "additional_sequences_after_first_find": 20
+  },
+  "cycles": [
+    {
+      "run_id": "local-10-2",
+      "seed": 10,
+      "depth": 2,
+      "source_sha256": "fecf899fe54a401f181616b15ad47fc694e3e32e82a2437e94d7c8127f63ea50",
+      "model_sha256": "7148712c559b78fa9c27890b13fe84170309c28afa2bb5c1d17fc601dd87433e",
+      "search_complete": true,
+      "checked_before_stop": 13,
+      "anomaly": false,
+      "minimized": [],
+      "validation": {
+        "evidence_level": "E2_synthetic_second_implementation",
+        "clean_replay_diverges": false,
+        "bug_disabled_control_diverges": false,
+        "reference_matches_oracle": true,
+        "reference_oracle_mismatch_indices": [],
+        "candidate_oracle_mismatch_indices": [],
+        "same_step_divergence_confirmed": false,
+        "reported_divergence_indices": [],
+        "one_minimal": false,
+        "deletion_results": [],
+        "counterexample": [],
+        "scope": "second synthetic implementation; no Horizon/Mariko inference"
+      }
+    },
+    {
+      "run_id": "local-20261030-3",
+      "seed": 20261030,
+      "depth": 3,
+      "source_sha256": "fecf899fe54a401f181616b15ad47fc694e3e32e82a2437e94d7c8127f63ea50",
+      "model_sha256": "7148712c559b78fa9c27890b13fe84170309c28afa2bb5c1d17fc601dd87433e",
+      "search_complete": false,
+      "checked_before_stop": 20,
+      "anomaly": true,
+      "minimized": [
+        {
+          "kind": "open",
+          "handle": null
+        },
+        {
+          "kind": "close",
+          "handle": 0
+        },
+        {
+          "kind": "open",
+          "handle": null
+        }
+      ],
+      "validation": {
+        "evidence_level": "E2_synthetic_second_implementation",
+        "clean_replay_diverges": true,
+        "bug_disabled_control_diverges": false,
+        "reference_matches_oracle": true,
+        "reference_oracle_mismatch_indices": [],
+        "candidate_oracle_mismatch_indices": [
+          2
+        ],
+        "same_step_divergence_confirmed": true,
+        "reported_divergence_indices": [
+          2
+        ],
+        "one_minimal": true,
+        "deletion_results": [
+          false,
+          false,
+          false
+        ],
+        "counterexample": [
+          {
+            "kind": "open",
+            "handle": null
+          },
+          {
+            "kind": "close",
+            "handle": 0
+          },
+          {
+            "kind": "open",
+            "handle": null
+          }
+        ],
+        "scope": "second synthetic implementation; no Horizon/Mariko inference"
+      }
+    },
+    {
+      "run_id": "local-77-5",
+      "seed": 77,
+      "depth": 5,
+      "source_sha256": "fecf899fe54a401f181616b15ad47fc694e3e32e82a2437e94d7c8127f63ea50",
+      "model_sha256": "7148712c559b78fa9c27890b13fe84170309c28afa2bb5c1d17fc601dd87433e",
+      "search_complete": false,
+      "checked_before_stop": 20,
+      "anomaly": true,
+      "minimized": [
+        {
+          "kind": "open",
+          "handle": null
+        },
+        {
+          "kind": "close",
+          "handle": 0
+        },
+        {
+          "kind": "open",
+          "handle": null
+        }
+      ],
+      "validation": {
+        "evidence_level": "E2_synthetic_second_implementation",
+        "clean_replay_diverges": true,
+        "bug_disabled_control_diverges": false,
+        "reference_matches_oracle": true,
+        "reference_oracle_mismatch_indices": [],
+        "candidate_oracle_mismatch_indices": [
+          2
+        ],
+        "same_step_divergence_confirmed": true,
+        "reported_divergence_indices": [
+          2
+        ],
+        "one_minimal": true,
+        "deletion_results": [
+          false,
+          false,
+          false
+        ],
+        "counterexample": [
+          {
+            "kind": "open",
+            "handle": null
+          },
+          {
+            "kind": "close",
+            "handle": 0
+          },
+          {
+            "kind": "open",
+            "handle": null
+          }
+        ],
+        "scope": "second synthetic implementation; no Horizon/Mariko inference"
+      }
+    }
+  ],
+  "seeded_negative_control": {
+    "sequences": 200,
+    "operations_each": 32,
+    "passed": 200,
+    "mismatches": []
+  },
+  "metamorphic_independent_close_commutativity": true,
+  "next_experiment": "synthetic cancellation/rollback interleavings, selected because oracle-confirmed handle-reuse defect was isolated to allocation identity; explore a separate failure/cleanup invariant."
+}

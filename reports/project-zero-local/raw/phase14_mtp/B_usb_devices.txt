@@ -1,0 +1,228 @@
++-o USB2.0 Hub@00100000  <class IOUSBHostDevice, id 0x10003cb0b, registered, matched, active, busy 0 (100 ms), retain 31>
+  | {
+  |   "sessionID" = 4087725831491
+  |   "USBSpeed" = 3
+  |   "UsbLinkSpeed" = 480000000
+  |   "idProduct" = 32789
+  |   "iManufacturer" = 1
+  |   "bDeviceClass" = 9
+  |   "IOPowerManagement" = {"PowerOverrideOn"=Yes,"CapabilityFlags"=32768,"MaxPowerState"=2,"DevicePowerState"=2,"DriverPowerState"=0,"ChildrenPowerState"=2,"CurrentPowerState"=2}
+  |   "bcdDevice" = 1061
+  |   "bMaxPacketSize0" = 64
+  |   "iProduct" = 2
+  |   "iSerialNumber" = 0
+  |   "bNumConfigurations" = 1
+  |   "kUSBContainerID" = "55607222-f99d-4f7d-a3b8-8e4b1fd494d7"
+  |   "UsbDeviceSignature" = <ac051580090001090000>
+  |   "locationID" = 1048576
+  |   "bDeviceSubClass" = 0
+  |   "bcdUSB" = 512
+  |   "USB Product Name" = "USB2.0 Hub"
+  |   "USB Address" = 1
+  |   "IOCFPlugInTypes" = {"9dc7b780-9ec0-11d4-a54f-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+  |   "UsbExclusiveOwner" = "AppleUSB20Hub_32789"
+  |   "bDeviceProtocol" = 1
+  |   "USBPortType" = 2
+  |   "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb","com.apple.developer.driverkit.builtin"))
+  |   "kUSBCurrentConfiguration" = 1
+  |   "USB Vendor Name" = "Apple"
+  |   "Device Speed" = 2
+  |   "idVendor" = 1452
+  |   "kUSBProductString" = "USB2.0 Hub"
+  |   "kUSBAddress" = 1
+  |   "kUSBVendorString" = "Apple"
+  | }
+  | 
+  +-o AppleUSB20Hub_32789@00100000  <class AppleUSB20Hub_32789, id 0x10003cb0d, registered, matched, active, busy 0 (79 ms), retain 14>
+  | | {
+  | |   "IOClass" = "AppleUSB20Hub_32789"
+  | |   "CFBundleIdentifier" = "com.apple.driver.AppleEmbeddedUSBHost"
+  | |   "IOProviderClass" = "IOUSBHostDevice"
+  | |   "bcdDevice" = 1061
+  | |   "kUSBSleepPortCurrentLimit" = 1500
+  | |   "idProduct" = 32789
+  | |   "IOProbeScore" = 100000
+  | |   "IOMatchedAtBoot" = Yes
+  | |   "kUSBWakePortCurrentLimit" = 1500
+  | |   "IOMatchCategory" = "IODefaultMatchCategory"
+  | |   "locationID" = 1048576
+  | |   "UsbBusCurrentPoolID" = 4295215885
+  | |   "IOPersonalityPublisher" = "com.apple.driver.AppleEmbeddedUSBHost"
+  | |   "idVendor" = 1452
+  | |   "CFBundleIdentifierKernel" = "com.apple.driver.AppleEmbeddedUSBHost"
+  | |   "kUSBHubPowerSupply" = 3200
+  | | }
+  | | 
+  | +-o usb-drd-hs-hub-port1@00120000  <class AppleUSB20HubPort, id 0x10003cb11, registered, matched, active, busy 0 (77 ms), retain 18>
+  | | | {
+  | | |   "PortNumber" = 1
+  | | |   "AAPL,phandle" = <b9000000>
+  | | |   "UsbProtocol (1.x)" = Yes
+  | | |   "UsbIOPort" = "IOService:/AppleARMPE/arm-io@10F00000/AppleH17PPlatformIO/nub-spmi-a0@F8908000/AppleSPMIController/hpm0@C/AppleHPMARMSPMI/AppleHPMDeviceHALType3@C/Port-USB-C@1"
+  | | |   "kUSBSleepPortCurrentLimit" = 1500
+  | | |   "UsbProtocolCompanion (3.x)" = "IOService:/AppleARMPE/arm-io@10F00000/AppleH17PPlatformIO/usb-drd@A280000/AppleT8140USBXHCI@00000000/usb-drd-port-ss@00200000"
+  | | |   "IOPowerManagement" = {"ChildrenPowerState"=3,"DevicePowerState"=1,"CurrentPowerState"=3,"CapabilityFlags"=32768,"MaxPowerState"=3,"DriverPowerState"=0}
+  | | |   "usb-port-type" = <04000000>
+  | | |   "UsbTransportState" = "IOService:/AppleARMPE/arm-io@10F00000/AppleH17PPlatformIO/nub-spmi-a0@F8908000/AppleSPMIController/hpm0@C/AppleHPMARMSPMI/AppleHPMDeviceHALType3@C/Port-USB-C@1/USB2"
+  | | |   "PortType" = 2
+  | | |   "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="484ms (0%)","kPowerStateOn"="1083498ms (99%)","kPowerStateSuspended"="0ms (0%)"},"kPortStatConnectCount"=3,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  | | |   "locationID" = 1179648
+  | | |   "name" = <"usb-drd-hs-hub-port1">
+  | | |   "usb-port-number" = <02000000>
+  | | |   "port-type" = <02000000>
+  | | |   "kUSBWakePortCurrentLimit" = 1500
+  | | |   "UsbProtocol (2.0)" = Yes
+  | | |   "port" = <02000000>
+  | | |   "port-status" = 4869
+  | | |   "port-number" = <01000000>
+  | | |   "usb-port-current-limit" = <dc050000>
+  | | |   "kUSBBusCurrentAllocation" = 500
+  | | | }
+  | | | 
+  | | +-o Nintendo Switch@00120000  <class IOUSBHostDevice, id 0x10003cd38, registered, matched, active, busy 0 (12 ms), retain 38>
+  | |   | {
+  | |   |   "kUSBSerialNumberString" = "[REDACTED_SERIAL]"
+  | |   |   "bDeviceClass" = 0
+  | |   |   "UsbLinkSpeed" = 480000000
+  | |   |   "bDeviceSubClass" = 0
+  | |   |   "iSerialNumber" = 3
+  | |   |   "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+  | |   |   "iProduct" = 2
+  | |   |   "USB Serial Number" = "[REDACTED_SERIAL]"
+  | |   |   "USB Vendor Name" = "Nintendo"
+  | |   |   "USBSpeed" = 3
+  | |   |   "IOPowerManagement" = {"PowerOverrideOn"=Yes,"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=32768,"MaxPowerState"=2,"DriverPowerState"=0}
+  | |   |   "bNumConfigurations" = 1
+  | |   |   "kUSBProductString" = "Nintendo Switch"
+  | |   |   "kUSBVendorString" = "Nintendo"
+  | |   |   "USB Product Name" = "Nintendo Switch"
+  | |   |   "iManufacturer" = 1
+  | |   |   "idVendor" = 1406
+  | |   |   "Device Speed" = 2
+  | |   |   "kUSBCurrentConfiguration" = 1
+  | |   |   "idProduct" = 8221
+  | |   |   "bcdDevice" = 256
+  | |   |   "UsbDeviceSignature" = <7e051d20584b4a3130303336393431303739000000060101>
+  | |   |   "sessionID" = 4105200733536
+  | |   |   "USB Address" = 2
+  | |   |   "IOCFPlugInTypes" = {"9dc7b780-9ec0-11d4-a54f-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+  | |   |   "USBPortType" = 5
+  | |   |   "UsbDeviceFunction" = 0
+  | |   |   "bDeviceProtocol" = 0
+  | |   |   "locationID" = 1179648
+  | |   |   "kUSBAddress" = 2
+  | |   |   "bcdUSB" = 512
+  | |   |   "UsbPowerSinkAllocation" = 500
+  | |   |   "bMaxPacketSize0" = 64
+  | |   | }
+  | |   | 
+  | |   +-o AppleUSBHostCompositeDevice  <class AppleUSBHostCompositeDevice, id 0x10003cd3d, !registered, !matched, active, busy 0, retain 4>
+  | |   |   {
+  | |   |     "IOProbeScore" = 50000
+  | |   |     "CFBundleIdentifier" = "com.apple.driver.usb.AppleUSBHostCompositeDevice"
+  | |   |     "IOProviderClass" = "IOUSBHostDevice"
+  | |   |     "IOClass" = "AppleUSBHostCompositeDevice"
+  | |   |     "IOPersonalityPublisher" = "com.apple.driver.usb.AppleUSBHostCompositeDevice"
+  | |   |     "bDeviceSubClass" = 0
+  | |   |     "CFBundleIdentifierKernel" = "com.apple.driver.usb.AppleUSBHostCompositeDevice"
+  | |   |     "IOMatchedAtBoot" = Yes
+  | |   |     "IOMatchCategory" = "IODefaultMatchCategory"
+  | |   |     "IOPrimaryDriverTerminateOptions" = Yes
+  | |   |     "bDeviceClass" = 0
+  | |   |   }
+  | |   |   
+  | |   +-o MTP@0  <class IOUSBHostInterface, id 0x10003cd3e, registered, matched, active, busy 0 (6 ms), retain 8>
+  | |   |   {
+  | |   |     "USBSpeed" = 3
+  | |   |     "iInterface" = 4
+  | |   |     "bInterfaceProtocol" = 1
+  | |   |     "bAlternateSetting" = 0
+  | |   |     "idProduct" = 8221
+  | |   |     "bcdDevice" = 256
+  | |   |     "USB Product Name" = "Nintendo Switch"
+  | |   |     "locationID" = 1179648
+  | |   |     "bInterfaceClass" = 6
+  | |   |     "bInterfaceSubClass" = 1
+  | |   |     "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+  | |   |     "USBPortType" = 5
+  | |   |     "kUSBString" = "MTP"
+  | |   |     "bInterfaceNumber" = 0
+  | |   |     "bConfigurationValue" = 1
+  | |   |     "USB Vendor Name" = "Nintendo"
+  | |   |     "idVendor" = 1406
+  | |   |     "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+  | |   |     "bNumEndpoints" = 3
+  | |   |     "USB Serial Number" = "[REDACTED_SERIAL]"
+  | |   |   }
+  | |   |   
+  | |   +-o Brave Browser  <class AppleUSBHostDeviceUserClient, id 0x10003cd3f, !registered, !matched, active, busy 0, retain 7>
+  | |   |   {
+  | |   |     "IOUserClientCreator" = "pid 6022, Brave Browser"
+  | |   |     "IOUserClientDefaultLocking" = Yes
+  | |   |   }
+  | |   |   
+  | |   +-o ChatGPT  <class AppleUSBHostDeviceUserClient, id 0x10003cd41, !registered, !matched, active, busy 0, retain 7>
+  | |       {
+  | |         "IOUserClientCreator" = "pid 10154, ChatGPT"
+  | |         "IOUserClientDefaultLocking" = Yes
+  | |       }
+  | |       
+  | +-o usb-drd-hs-hub-port2@00110000  <class AppleUSB20HubPort, id 0x10003cb13, registered, matched, active, busy 0 (0 ms), retain 13>
+  |     {
+  |       "usb-port-number" = <01000000>
+  |       "PortNumber" = 2
+  |       "usb-port-current-limit" = <dc050000>
+  |       "kUSBSleepPortCurrentLimit" = 1500
+  |       "AAPL,phandle" = <ba000000>
+  |       "UsbProtocol (1.x)" = Yes
+  |       "UsbProtocol (2.0)" = Yes
+  |       "kUSBWakePortCurrentLimit" = 1500
+  |       "locationID" = 1114112
+  |       "UsbIOPort" = "IOService:/AppleARMPE/arm-io@10F00000/AppleH17PPlatformIO/nub-spmi-a0@F8908000/AppleSPMIController/hpm1@A/AppleHPMARMSPMI/AppleHPMDeviceHALType3@A/Port-USB-C@2"
+  |       "IOPowerManagement" = {"PowerOverrideOn"=Yes,"DevicePowerState"=0,"CurrentPowerState"=0,"CapabilityFlags"=256,"MaxPowerState"=3,"DriverPowerState"=0}
+  |       "PortType" = 2
+  |       "usb-port-type" = <04000000>
+  |       "port-type" = <02000000>
+  |       "port-status" = 5
+  |       "port-number" = <02000000>
+  |       "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="1043140ms (100%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="0ms (0%)","kPowerStateSuspended"="0ms (0%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |       "name" = <"usb-drd-hs-hub-port2">
+  |       "port" = <01000000>
+  |     }
+  |     
+  +-o IOUSBHostInterface@0  <class IOUSBHostInterface, id 0x10003cb10, !registered, !matched, active, busy 0, retain 8>
+  |   {
+  |     "USBPortType" = 2
+  |     "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+  |     "USB Vendor Name" = "Apple"
+  |     "bcdDevice" = 1061
+  |     "USBSpeed" = 3
+  |     "idProduct" = 32789
+  |     "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb","com.apple.developer.driverkit.builtin"))
+  |     "bInterfaceSubClass" = 0
+  |     "bConfigurationValue" = 1
+  |     "locationID" = 1048576
+  |     "USB Product Name" = "USB2.0 Hub"
+  |     "UsbExclusiveOwner" = "AppleUSB20Hub_32789"
+  |     "bInterfaceProtocol" = 0
+  |     "iInterface" = 0
+  |     "bAlternateSetting" = 0
+  |     "idVendor" = 1452
+  |     "bInterfaceNumber" = 0
+  |     "bInterfaceClass" = 9
+  |     "bNumEndpoints" = 1
+  |   }
+  |   
+  +-o Brave Browser  <class AppleUSBHostDeviceUserClient, id 0x10003cb16, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 6022, Brave Browser"
+  |     "IOUserClientDefaultLocking" = Yes
+  |   }
+  |   
+  +-o ChatGPT  <class AppleUSBHostDeviceUserClient, id 0x10003cb17, !registered, !matched, active, busy 0, retain 6>
+      {
+        "IOUserClientCreator" = "pid 10154, ChatGPT"
+        "IOUserClientDefaultLocking" = Yes
+      }
+      
+

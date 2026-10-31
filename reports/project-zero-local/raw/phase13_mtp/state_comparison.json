@@ -1,0 +1,181 @@
+{
+  "physical_console": true,
+  "state_A_initial_mtp": {
+    "usb_vid_pid": "057e:201d",
+    "interface": "MTP class/subclass/protocol 06/01/01",
+    "endpoint_count": 3,
+    "device_version": "23.0.1",
+    "operations_supported": [
+      "0x1001",
+      "0x1002",
+      "0x1003",
+      "0x1004",
+      "0x1005",
+      "0x1006",
+      "0x1007",
+      "0x1008",
+      "0x1009",
+      "0x100a"
+    ],
+    "device_properties_supported": [],
+    "storage_ids": [
+      "0x00030001"
+    ],
+    "storage_info": {
+      "kind": "storage_info",
+      "storage_id": "0x00030001",
+      "response_code": "0x2001",
+      "storage_type": 1,
+      "filesystem_type": 2,
+      "access_capability": 1,
+      "max_capacity": "18446744073709551615",
+      "free_space_bytes": "18446744073709551615",
+      "free_space_in_images": 4294967295,
+      "description": "Album",
+      "volume_label": ""
+    },
+    "object_count": 3,
+    "operation_results": [
+      {
+        "operation": "GetDeviceInfo",
+        "response_code": "0x2001"
+      },
+      {
+        "operation": "GetStorageIDs",
+        "response_code": "0x2001"
+      },
+      {
+        "operation": "GetStorageInfo",
+        "response_code": "0x2001"
+      },
+      {
+        "operation": "GetNumObjects (all formats, root)",
+        "response_code": "0x2001"
+      }
+    ]
+  },
+  "state_B0_after_exit_mtp": {
+    "usb_vid_pid": "057e:2000",
+    "interface": "HID class/subclass/protocol 03/00/00",
+    "endpoint_count": 1,
+    "macos_owner": "AppleUserUSBHostHIDDevice",
+    "mtp_present": false,
+    "hid_report_payloads_read_or_sent": false
+  },
+  "state_B1_after_reenter_mtp": {
+    "usb_vid_pid": "057e:201d",
+    "interface": "MTP class/subclass/protocol 06/01/01",
+    "endpoint_count": 3,
+    "device_version": "23.0.1",
+    "operations_supported": [
+      "0x1001",
+      "0x1002",
+      "0x1003",
+      "0x1004",
+      "0x1005",
+      "0x1006",
+      "0x1007",
+      "0x1008",
+      "0x1009",
+      "0x100a"
+    ],
+    "device_properties_supported": [],
+    "storage_ids": [
+      "0x00040001"
+    ],
+    "storage_info": {
+      "kind": "storage_info",
+      "storage_id": "0x00040001",
+      "response_code": "0x2001",
+      "storage_type": 1,
+      "filesystem_type": 2,
+      "access_capability": 1,
+      "max_capacity": "18446744073709551615",
+      "free_space_bytes": "18446744073709551615",
+      "free_space_in_images": 4294967295,
+      "description": "Album",
+      "volume_label": ""
+    },
+    "object_count": 3,
+    "operation_results": [
+      {
+        "operation": "GetDeviceInfo",
+        "response_code": "0x2001"
+      },
+      {
+        "operation": "GetStorageIDs",
+        "response_code": "0x2001"
+      },
+      {
+        "operation": "GetStorageInfo",
+        "response_code": "0x2001"
+      },
+      {
+        "operation": "GetNumObjects (all formats, root)",
+        "response_code": "0x2001"
+      }
+    ]
+  },
+  "same_mode_repeat": {
+    "device_version": "23.0.1",
+    "operations_supported": [
+      "0x1001",
+      "0x1002",
+      "0x1003",
+      "0x1004",
+      "0x1005",
+      "0x1006",
+      "0x1007",
+      "0x1008",
+      "0x1009",
+      "0x100a"
+    ],
+    "device_properties_supported": [],
+    "storage_ids": [
+      "0x00040001"
+    ],
+    "storage_info": {
+      "kind": "storage_info",
+      "storage_id": "0x00040001",
+      "response_code": "0x2001",
+      "storage_type": 1,
+      "filesystem_type": 2,
+      "access_capability": 1,
+      "max_capacity": "18446744073709551615",
+      "free_space_bytes": "18446744073709551615",
+      "free_space_in_images": 4294967295,
+      "description": "Album",
+      "volume_label": ""
+    },
+    "object_count": 3,
+    "operation_results": [
+      {
+        "operation": "GetDeviceInfo",
+        "response_code": "0x2001"
+      },
+      {
+        "operation": "GetStorageIDs",
+        "response_code": "0x2001"
+      },
+      {
+        "operation": "GetStorageInfo",
+        "response_code": "0x2001"
+      },
+      {
+        "operation": "GetNumObjects (all formats, root)",
+        "response_code": "0x2001"
+      }
+    ]
+  },
+  "comparison": {
+    "usb_function_transition": "MTP 057e:201d -> HID 057e:2000 -> MTP 057e:201d",
+    "supported_operations_unchanged": true,
+    "get_num_objects_count_unchanged": true,
+    "storage_id_initial_to_reentered": [
+      "0x00030001",
+      "0x00040001"
+    ],
+    "storage_id_stable_on_immediate_repeat": true,
+    "no_object_handles_or_contents_requested": true
+  }
+}

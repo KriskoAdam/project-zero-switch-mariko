@@ -1,0 +1,19 @@
+# Suggested labels; apply with GitHub CLI after repository creation.
+- name: research-proposal
+  color: "d4c5f9"
+- name: evidence-needed
+  color: "fbca04"
+- name: hardware-compatibility
+  color: "1d76db"
+- name: firmware-scope
+  color: "5319e7"
+- name: reproducibility
+  color: "0e8a16"
+- name: ai-agent
+  color: "7057ff"
+- name: privacy-review
+  color: "d93f0b"
+- name: documentation
+  color: "0075ca"
+- name: closed-lead
+  color: "cfd3d7"

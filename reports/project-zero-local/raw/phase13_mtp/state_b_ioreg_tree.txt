@@ -1,0 +1,4 @@
++-o Root  <class IORegistryEntry, id 0x100000100, retain 35>
+  +-o AppleT8140USBXHCI@00000000  <class AppleT8140USBXHCI, id 0x100000396, registered, matched, active, busy 0 (36743 ms), retain 68>
+    +-o USB2.0 Hub@00100000  <class IOUSBHostDevice, id 0x10003cb0b, registered, matched, active, busy 0 (85 ms), retain 31>
+      +-o Nintendo Switch@00120000  <class IOUSBHostDevice, id 0x10003cd12, registered, matched, active, busy 0 (41 ms), retain 31>

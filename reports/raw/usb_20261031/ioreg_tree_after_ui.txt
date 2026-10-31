@@ -1,0 +1,2 @@
++-o Root  <class IORegistryEntry, id 0x100000100, retain 35>
+  +-o AppleT8140USBXHCI@00000000  <class AppleT8140USBXHCI, id 0x100000396, registered, matched, active, busy 0 (36657 ms), retain 32>

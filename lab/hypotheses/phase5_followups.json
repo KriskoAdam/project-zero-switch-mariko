@@ -1,0 +1,10 @@
+[
+  {
+    "id": "P5-RETRY-001",
+    "area": "protocol_state_modeling",
+    "claim": "An operation explicitly declared idempotent by the synthetic contract has the same committed state after a committed request, lost acknowledgement, and retry as after one successful request.",
+    "falsification_criterion": "Find an enumerated trace at depth <= 4 where the independent reference and a separately coded oracle disagree, or where a bug-off candidate differs from the reference; either condition invalidates the test harness before interpreting the planted candidate result.",
+    "experiment": "Exhaustively enumerate send/lost-ack/retry traces with one fixed idempotency key; compare event state against a key ledger oracle; minimize the first mismatch; repeat with the duplicate-commit defect disabled.",
+    "evidence_status": "E0 hypothesis; synthetic detector validation only if the planted bug is detected"
+  }
+]

@@ -1,0 +1,43 @@
+name: AI agent contribution
+description: Submit source-grounded AI-assisted research for human review
+labels: ["ai-agent", "evidence-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: "AI output is a lead until the sources and method are independently checkable. Never attach secrets or payloads."
+  - type: input
+    id: agent
+    attributes:
+      label: Agent/tool and version
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Narrow research question
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: URLs, dates, and source quality
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Prompt-independent method / reproducible steps
+    validations:
+      required: true
+  - type: textarea
+    id: findings
+    attributes:
+      label: Findings, evidence class, limitations, unresolved questions
+    validations:
+      required: true
+  - type: textarea
+    id: audit
+    attributes:
+      label: Independent skeptical review
+    validations:
+      required: true

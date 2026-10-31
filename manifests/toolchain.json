@@ -1,0 +1,33 @@
+{
+  "host": {
+    "os": "macOS 27.0.1",
+    "architecture": "arm64"
+  },
+  "existing": {
+    "git": "2.54.0",
+    "python": "3.14.7",
+    "node": "24.22.2",
+    "node_lts_codename": "Krypton",
+    "apple_clang": "21.0.0"
+  },
+  "installed": {
+    "cmake": "4.4.5",
+    "ninja": "1.13.2",
+    "llvm": "23.1.4",
+    "pkgconf": "3.0.10",
+    "openjdk": "25.0.5.0.3",
+    "ghidra": "12.1.4",
+    "capstone": "5.0.9",
+    "pyelftools": "0.33",
+    "lief": "1.0.0",
+    "construct": "2.10.70"
+  },
+  "ghidra_source": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build",
+  "ghidra_archive_sha256": "ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db",
+  "rea": {
+    "version": "6.8.0",
+    "codex_registration": "aligned",
+    "ghidra_provider_checks": "healthy when GHIDRA_INSTALL_DIR and JAVA_HOME are supplied",
+    "live_server_restart_required": true
+  }
+}

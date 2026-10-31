@@ -1,0 +1,14 @@
+test_cancellation_model_finds_and_minimizes_distinct_anomaly (test_engine.DiscoveryEngineTests.test_cancellation_model_finds_and_minimizes_distinct_anomaly) ... ok
+test_catalog_has_forty_distinct_hypotheses (test_engine.DiscoveryEngineTests.test_catalog_has_forty_distinct_hypotheses) ... ok
+test_clean_candidate_is_differentially_equivalent_bounded (test_engine.DiscoveryEngineTests.test_clean_candidate_is_differentially_equivalent_bounded) ... ok
+test_close_order_commutes_for_distinct_resources (test_engine.DiscoveryEngineTests.test_close_order_commutes_for_distinct_resources) ... ok
+test_explorer_finds_planted_model_defect (test_engine.DiscoveryEngineTests.test_explorer_finds_planted_model_defect) ... ok
+test_invariant_checker_falsifies_invalid_close_contract (test_engine.DiscoveryEngineTests.test_invariant_checker_falsifies_invalid_close_contract) ... ok
+test_minimizer_returns_deletion_minimal_counterexample (test_engine.DiscoveryEngineTests.test_minimizer_returns_deletion_minimal_counterexample) ... ok
+test_seeded_property_sequences_match_when_bug_disabled (test_engine.DiscoveryEngineTests.test_seeded_property_sequences_match_when_bug_disabled) ... ok
+test_validator_replays_and_bug_off_control_passes (test_engine.DiscoveryEngineTests.test_validator_replays_and_bug_off_control_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.023s
+
+OK

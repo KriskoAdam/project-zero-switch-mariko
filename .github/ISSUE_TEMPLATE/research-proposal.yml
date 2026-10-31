@@ -1,0 +1,39 @@
+name: Research proposal
+description: Propose a narrowly scoped, safe experiment
+labels: ["research-proposal", "evidence-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include payloads, keys, firmware dumps, serial numbers, or private identifiers."
+  - type: input
+    id: question
+    attributes:
+      label: Specific question
+      placeholder: One question this experiment can answer
+    validations:
+      required: true
+  - type: textarea
+    id: target
+    attributes:
+      label: Exact target and evidence
+      description: Model/revision, SoC evidence, firmware, and whether physical/source/host-only.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources and dates
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Safe method and stop condition
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What result would change the current conclusion?
+    validations:
+      required: true

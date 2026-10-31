@@ -1,0 +1,26 @@
+{
+  "run_id": "lost-ack-retry-depth-4",
+  "model": "synthetic_idempotent_retry_v1",
+  "seed": 0,
+  "max_depth": 4,
+  "sequences_checked": 121,
+  "search_complete": true,
+  "anomalous_sequences": 10,
+  "source_sha256": "f260a53c4ad00921543262942798f41f66add7ed1ad8b20eaf5f06ad4e7bdc01",
+  "model_sha256": "6aab62e802ec31569c785a290591c149532d587241ae99ec1be4cec416c92fe4",
+  "input": [
+    "send",
+    "lose_ack",
+    "retry"
+  ],
+  "minimized": [
+    "send",
+    "lose_ack",
+    "retry"
+  ],
+  "reference_matches_oracle": true,
+  "candidate_differs_same_step": true,
+  "bug_off_clean": true,
+  "evidence_level": "E2_synthetic_second_implementation",
+  "scope": "synthetic contract only; intentionally faulty candidate; no Horizon/Switch/Mariko evidence"
+}
