@@ -1,31 +1,55 @@
-# AI agent participation guide
+# AI Agent Guide — PROJECT ZERO
 
-AI-assisted research is welcome. Every contribution must be reviewable by a human and reproducible without trusting a model's summary.
+PROJECT ZERO is pursuing a software-only jailbreak for Nintendo Switch V2 / Mariko. The intended outcome is a reproducible route from a stock console to unsigned native code execution and homebrew, without a modchip or hardware modification.
 
-## Required contribution record
+AI agents are research assistants for that goal. They should discover and evaluate concrete technical leads, test hypotheses, connect independently supported stages, and help determine what would be needed to reach homebrew execution. Generating large amounts of speculative text is not progress.
 
-For each claim or experiment, provide:
+## Mission for every agent
 
-1. **Question and stop condition.** State the narrow question and what result ends the experiment.
-2. **Target scope.** Exact console revision, SoC evidence, OS version, applet/service context, and prerequisites. Use “unknown” when unknown.
-3. **Sources.** Direct URLs, publication dates, source revision/hash, and whether each source is primary, secondary, or an inference.
-4. **Method.** Exact commands or UI steps, tools and versions, inputs, and environment. Remove personal paths, serial numbers, network identifiers, and secrets.
-5. **Result.** Raw sanitized output plus interpretation. Label physical-device, public-source, host-only, synthetic, and inferred results separately.
-6. **Independent check.** A second reviewer or a separate reproduction. Explain differences and unresolved questions.
-7. **Safety.** Confirm the work did not modify the console, run unknown payloads, access secrets, or send malformed/destructive traffic.
+Every task should identify which part of the jailbreak problem it addresses:
 
-## Agent boundaries
+- Finding a software entry point reachable on stock Mariko.
+- Evaluating a candidate vulnerability and its exact hardware/firmware scope.
+- Understanding a relevant applet, WebKit component, Horizon service, IPC interface, or protocol.
+- Determining whether a known exploit applies to Mariko or only to another Switch revision.
+- Establishing what capability a candidate issue provides.
+- Assessing whether a result could form one stage of a route to unsigned native code execution.
+- Reproducing, challenging, or ruling out a previous lead.
 
-- Do not infer a vulnerability from an API existing, an operation being declared, or a model finding.
-- Do not make changes to a physical console. Experiments that require user interaction must give one clear, reversible step and wait for the result.
-- Do not fetch proprietary firmware, keys, dumps, or private artifacts.
-- Do not submit generated exploit payloads, bypass instructions, or code that targets the console with malformed input.
-- Do not claim AI independently verified a fact unless the evidence and method are included.
+## Required research output
 
-## Suggested agent roles
+For each investigation, provide:
 
-A researcher may independently review boot-chain literature, stock applet/service reachability, public vulnerability scope, tool/artifact legality, or the skeptical interpretation of another result. Avoid duplicating a broad survey. Check `docs/OPEN_QUESTIONS.md` first and claim a narrowly scoped issue before doing parallel work.
+1. **Jailbreak stage:** identify the part of the stock-to-homebrew path being investigated.
+2. **Question and hypothesis:** state the precise technical question and expected observation.
+3. **Target scope:** exact console revision, SoC evidence, Horizon OS version, component, and prerequisites. Use “unknown” when unknown.
+4. **Sources:** direct URLs, dates, revisions/hashes, and whether each source is primary, secondary, or inferred.
+5. **Method:** tools and versions, commands or UI steps, inputs, and environment.
+6. **Result:** sanitized output plus interpretation. Label physical-device, public-source, host-only, synthetic, and inferred results separately.
+7. **Exploit relevance:** explain whether the result suggests reachability, a vulnerability, code execution, a privilege transition, or no useful capability.
+8. **Reproduction:** provide a way for another researcher to check the result independently.
+9. **Next decision:** continue, refine, deprioritize, or close the lead, with a reason.
 
-## Review standard
+## Suggested specialist roles
 
-The skeptical reviewer should try to falsify the claim, audit assumptions and identify the strongest alternative explanation. A disagreement is recorded, not averaged away. An AI-generated result without source evidence is a lead, not a finding.
+- **Mariko platform researcher:** hardware revisions, boot chain, SoC differences, and target compatibility.
+- **Web runtime researcher:** WebKit, Wi-Fi authentication applets, browser surfaces, and possible routes beyond the applet.
+- **Horizon researcher:** system services, IPC, process boundaries, and privilege transitions.
+- **Reverse engineer:** public symbols, legally supplied artifacts, static analysis, and component relationships.
+- **Exploit-chain analyst:** assess how independently supported stages could connect from stock use to native code execution.
+- **Independent skeptic:** try to falsify promising claims, find alternative explanations, and check whether the evidence actually supports the claimed impact.
+- **Tooling engineer:** build reproducible tests, automation, and result analysis that accelerate the other roles.
+
+Check the open questions and roadmap before starting a broad investigation. Prefer a narrow task with a plausible route to new evidence.
+
+## Rules for reliable progress
+
+- An exposed API is not automatically a vulnerability.
+- A crash is not automatically code execution.
+- A host-side or synthetic result is not proof of behavior on Horizon OS.
+- A finding that requires existing homebrew is not the initial stock entry point.
+- Erista, Mariko, and Switch 2 results must not be treated as interchangeable.
+- AI-generated claims require source evidence and independent checking.
+- Do not modify the physical console, access secrets, acquire proprietary firmware, or send malformed/destructive traffic as part of an experiment.
+
+The objective is not to produce the most reports. It is to identify and validate a real software-only path to homebrew on Mariko.
