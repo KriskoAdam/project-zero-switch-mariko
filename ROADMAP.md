@@ -4,7 +4,7 @@ This roadmap is about improving evidence quality and shared research. It does no
 
 ## Now
 
-- Reproduce the Phase 19 read-only Switch-format parser tests; use only legally sourced, integrity-verifiable target artifacts if any become available.
+- Wait for one authorized, integrity-verifiable, unencrypted HOS 23.0.1 `webapplet` NSO and its matching NPDM/build identity; until then, keep the target-binary analysis gate closed.
 - Invite independent review of evidence labels, privacy scrubbing, and historical conclusions.
 - Clarify exact hardware identity and distinguish owner-reported model/firmware from direct silicon evidence.
 - Reproduce safe host-side tests from a clean checkout.
@@ -24,6 +24,7 @@ This roadmap is about improving evidence quality and shared research. It does no
 
 ## Done / closed branches
 
+- Phase 20 confirmed the local Phase 18/19 commit is present and complete; GitHub remains unsynchronized because local hostname resolution failed and the configured `gh` credential is invalid. No authentication workaround was attempted (`reports/PHASE20_GITHUB_AND_RESEARCH_AUDIT.md`).
 - Phase 19 parser pipeline: bounded subset validation and synthetic tests exist for NSO/NRO/KIP1/NPDM; ELF metadata and Phase 18 AArch64 analysis are wired into one JSON CLI. No HOS 23.0.1 executable was available, compressed Switch sections and full loader/signature semantics remain unsupported, and this is not a firmware analysis result (`reports/PHASE19_HOS_ARTIFACT_READINESS.md`).
 - Phase 18 ARM64 disassembler repair validated on the local homebrew ELF only; no HOS compatibility claim (`reports/PHASE18_DISASSEMBLER_VALIDATION.md`).
 - Phase 7 libnx filename-buffer ABI hypothesis: closed as safe under the documented callback capacity.
