@@ -1,29 +1,65 @@
-# Roadmap
+# PROJECT ZERO Roadmap — Mariko Software-Only Jailbreak
 
-This roadmap is about improving evidence quality and shared research. It does not promise an exploit or a release date.
+The destination is a reproducible software-only jailbreak for Nintendo Switch V2 / Mariko: a path from a stock console to unsigned native code execution and homebrew, without a modchip or hardware modification.
 
-## Now
+The roadmap describes the research path toward that result. Milestones are goals, not claims that the relevant exploit stages already exist.
 
-- Invite independent review of evidence labels, privacy scrubbing, and historical conclusions.
-- Clarify exact hardware identity and distinguish owner-reported model/firmware from direct silicon evidence.
-- Reproduce safe host-side tests from a clean checkout.
-- Improve citations and attach source/version/hash information to each technical claim.
+## Phase 1 — Establish the exact target
 
-## Next, if new evidence supports it
+- Confirm the console revision and SoC using reliable, non-invasive evidence.
+- Record the exact Horizon OS version and relevant system configuration.
+- Separate Mariko-specific results from Erista V1, Switch 2, and other firmware research.
+- Build a compatibility matrix for every candidate lead.
 
-- Review new public security advisories, conference material, and research repositories for exact Switch 1 hardware/firmware scope.
-- Analyze only legally obtained, integrity-verifiable artifacts; do not source firmware or keys through this project.
-- Design safe experiments around publicly documented stock interfaces, with explicit stop criteria and no malformed console traffic.
+**Exit condition:** the hardware and firmware target are precisely identified.
 
-## Later
+## Phase 2 — Find a stock-software entry point
 
-- Maintain a versioned compatibility matrix for Erista, Mariko, and Switch 2.
-- Add an evidence-backed corpus of public claims and independent reproductions.
-- Decide whether a specific technical lead merits deeper work based on pre-homebrew reachability.
+- Map software components reachable during ordinary stock-console use.
+- Investigate plausible applet, browser, service, and protocol entry surfaces.
+- Review public vulnerability research for exact hardware and firmware compatibility.
+- Prioritize leads that can be reached before unsigned homebrew is already running.
 
-## Done / closed branches
+**Exit condition:** at least one concrete candidate can be tested from a stock starting state.
 
-- Phase 7 libnx filename-buffer ABI hypothesis: closed as safe under the documented callback capacity.
-- Phase 12 benign web-applet capability probe: no vulnerability demonstrated.
-- Phase 13–14 standard read-only MTP observations: no reproducible security anomaly demonstrated; branch closed absent new evidence.
-- SDK/Homebrew library findings requiring already-running unsigned code are not first-entry-point candidates.
+## Phase 3 — Validate a vulnerability
+
+- Turn the candidate into a narrowly scoped, repeatable experiment.
+- Establish whether the behavior is a real flaw rather than normal interface behavior.
+- Determine affected component, firmware range, and security boundary.
+- Seek independent reproduction and document limitations.
+
+**Exit condition:** a reproducible vulnerability with a clearly described impact.
+
+## Phase 4 — Investigate an exploit chain
+
+- Determine what capability the validated issue provides.
+- Identify what additional stages would be required to reach native unsigned code execution.
+- Evaluate whether separate, independently supported weaknesses can be connected.
+- Test each stage separately and record where the chain stops.
+
+**Exit condition:** a technically supported route from the initial entry point toward native code execution.
+
+## Phase 5 — Demonstrate homebrew execution
+
+- Validate the complete route on the precisely identified Mariko target.
+- Demonstrate a minimal, harmless unsigned native program.
+- Repeat the procedure from a documented starting state.
+- Record exact firmware compatibility, prerequisites, reliability, and limitations.
+
+**Exit condition:** an independently reproducible software-only homebrew launch on Mariko.
+
+## Current position
+
+The project is still in the discovery and validation stages. The Web Auth Applet and USB/MTP investigations have produced observations but no demonstrated entry point. The libnx callback investigation closed a host-side hypothesis and does not provide a stock-console route. No complete Mariko / HOS 23.0.1 software-only exploit chain has been demonstrated.
+
+## Closed or deprioritized leads
+
+- **Phase 7 libnx callback hypothesis:** closed against the documented callback capacity; not a stock-system entry point.
+- **Phase 12 Web Auth Applet probe:** ordinary web APIs were observed; no vulnerability was demonstrated.
+- **Phases 13–14 MTP observations:** no reproducible security-relevant primitive was established. Revisit only if new evidence changes the technical question.
+- **SDK or Homebrew library issues:** not first-entry candidates when they require unsigned code to be running already.
+
+## How priorities are chosen
+
+Prefer work that can move the project closer to a stock-to-homebrew path. A useful lead must have a plausible route to the target, a testable technical claim, and a way to tell success from failure. Do not keep a direction alive merely because it produces more reports.
