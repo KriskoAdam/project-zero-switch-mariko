@@ -4,7 +4,7 @@ This roadmap is about improving evidence quality and shared research. It does no
 
 ## Now
 
-- Wait for one authorized, integrity-verifiable, unencrypted HOS 23.0.1 `webapplet` NSO and its matching NPDM/build identity; until then, keep the target-binary analysis gate closed.
+- Wait for an authorized, integrity-verifiable HOS 23.0.1 WebApplet artifact set: inspectable main executable + matching NPDM/build identity + same-build BrowserDll/SystemData (shared NetFront/OSS modules and relevant browser data). Current tools cannot disassemble compressed NSO directly.
 - Invite independent review of evidence labels, privacy scrubbing, and historical conclusions.
 - Clarify exact hardware identity and distinguish owner-reported model/firmware from direct silicon evidence.
 - Reproduce safe host-side tests from a clean checkout.
@@ -24,6 +24,7 @@ This roadmap is about improving evidence quality and shared research. It does no
 
 ## Done / closed branches
 
+- Phase 21 public-source architecture review confirms the WebApplet main NSO/NPDM alone would not capture the shared BrowserDll/SystemData engine; no target 23.0.1 binary set was found or acquired, so code/permission analysis remains blocked (`reports/PHASE21_WEBAPPLET_ANALYSIS.md`).
 - Phase 20 confirmed the local Phase 18/19 commit is present and complete; GitHub remains unsynchronized because local hostname resolution failed and the configured `gh` credential is invalid. No authentication workaround was attempted (`reports/PHASE20_GITHUB_AND_RESEARCH_AUDIT.md`).
 - Phase 19 parser pipeline: bounded subset validation and synthetic tests exist for NSO/NRO/KIP1/NPDM; ELF metadata and Phase 18 AArch64 analysis are wired into one JSON CLI. No HOS 23.0.1 executable was available, compressed Switch sections and full loader/signature semantics remain unsupported, and this is not a firmware analysis result (`reports/PHASE19_HOS_ARTIFACT_READINESS.md`).
 - Phase 18 ARM64 disassembler repair validated on the local homebrew ELF only; no HOS compatibility claim (`reports/PHASE18_DISASSEMBLER_VALIDATION.md`).
