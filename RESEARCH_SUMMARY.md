@@ -215,3 +215,40 @@ Raw evidence and executable research tooling are not redundant narrative reports
 - Atmosphère issue 2872: https://github.com/Atmosphere-NX/Atmosphere/issues/2872
 
 Community-maintained metadata and format documentation are secondary technical references, not Nintendo-authenticated binary manifests. Recheck current pages before making time-sensitive compatibility claims.
+
+## 13. New reverse-engineering hypotheses (2026-10-31)
+
+The following leads were proposed by an external AI-generated research plan. They have **not** been independently verified against the target's matching HOS 23.0.1 binaries. They are recorded to guide falsifiable investigation, not as findings or evidence of an available exploit chain.
+
+| Lead | Status | What must be established before upgrading its status |
+|---|---|---|
+| `svcMapProcessMemory` could expose memory belonging to the `openWeb` process | **HYPOTHESIS — NOT TESTED** | Identify the exact caller, target process handle acquisition, required handle rights, kernel checks, mapping direction and permissions. Do not infer cross-process read access from the SVC name alone. |
+| `fsp-ldr` could provide access to decrypted executable content | **HYPOTHESIS — NOT TESTED** | Identify the relevant service interface and caller authorization in matching-build code; establish what content is returned and under which process/loader conditions. No stock-console access path is currently demonstrated. |
+| BrowserDll `Path::Normalize` call sites could expose a path-handling flaw | **HYPOTHESIS — NOT TESTED** | Locate the actual implementation and call sites in the correct BrowserDll/WebKit build; trace attacker-controlled input, normalization semantics, bounds checks and downstream filesystem use. No overflow or filesystem-service bridge is currently demonstrated. |
+| `svcMapPhysicalMemoryUnsafe` / `svcUnmapPhysicalMemoryUnsafe` in openWeb NPDM may be security-relevant | **OBSERVED METADATA; SECURITY IMPACT NOT TESTED** | Confirm the SVC descriptors in the exact matching NPDM, then determine whether the executable invokes them and what kernel-enforced constraints apply. An NPDM allowlist entry is not proof of arbitrary physical-memory access. |
+| Transfer-memory handling or TLV `0x44` (`TransferMemoryEnabled`) may affect the Web Auth applet path | **HYPOTHESIS — NOT TESTED** | Find the relevant structure/handler in the matching executable, establish the TLV definition and data flow from a reachable input, and test the actual privilege and memory boundaries. Do not infer behavior from names or unrelated source references. |
+| A privileged `fs` path could make keyless executable inspection possible | **HYPOTHESIS — NOT TESTED** | First identify a reproducible, authorized stock-state entry point and prove the exact permissions and data path. No `fs` privilege escalation, `FullPermission` path, or decrypted-code dump capability is currently established. |
+
+### 13.1 Required investigation order
+
+1. **Artifact identity and provenance:** identify each candidate NCA by hash, content ID, NCA type, title ID, title version and parsed key-generation field where available. Record the source and confidence. Do not infer every NCA's key generation solely from the HOS release label.
+2. **Parser and extraction validation:** document exact tool versions and supported command-line syntax. Validate extraction against a known-good, lawfully available test artifact and an independent implementation. A magic-byte check (`NSO0` or `NPDM`) is only a format sanity check, not proof of correct decryption, provenance, signature validity or target compatibility.
+3. **NPDM access-control inventory:** parse SVC, service and filesystem access-control metadata from the matching openWeb NPDM. Label these as declared permissions; separately track actual call sites and kernel-enforced conditions.
+4. **openWeb call/data-flow map:** identify actual SVC calls, IPC/service sessions, transferred-memory use and relevant input handlers. Record cross-references and reachable call paths rather than relying on symbol names or AI-generated guesses.
+5. **BrowserDll/WebKit map:** identify the exact NRO build and map filesystem-related call sites, path normalization, IPC and service boundaries. Do not assume a `Path::Normalize` vulnerability exists.
+6. **Falsifiable tests:** create narrowly scoped host-side tests or authorized non-destructive experiments for a specific parser or input-validation hypothesis. Distinguish a parse error, crash, controlled memory corruption, code execution and privilege escalation; they are different outcomes.
+7. **Exploit-chain accounting:** for any candidate issue, document stock-state reachability, affected build, primitive, process context, privilege boundary crossed, mitigations, reproducibility and independent confirmation. Browser code execution alone is not a jailbreak.
+8. **Update this report only when evidence changes:** preserve the single-report policy. Add no duplicate narrative report. Keep all unverified leads explicitly marked HYPOTHESIS or NOT TESTED.
+
+### 13.2 Explicit non-claims
+
+This section does **not** establish that:
+- keygen 16 is present in every NCA associated with HOS 23.0.x;
+- a particular key set is available, valid or sufficient for every candidate NCA;
+- an NPDM SVC permission bypasses kernel policy;
+- `svcMapProcessMemory` permits arbitrary cross-process reads;
+- `fsp-ldr` exposes decrypted code to an unprivileged stock process;
+- a `Path::Normalize` overflow exists or is reachable;
+- an `fs` exploit or keyless dump route exists on Mariko / HOS 23.0.1.
+
+No console secrets, key files, decrypted Nintendo binaries or proprietary executable artifacts should be committed to this repository.
