@@ -4,7 +4,7 @@ This roadmap is about improving evidence quality and shared research. It does no
 
 ## Now
 
-- Wait for an authorized, integrity-verifiable WebApplet artifact set and matching NPDM/build identity plus BrowserDll/SystemData/OSS modules. Phase 24 found no eligible binaries locally or in clearly redistributable public datasets. Community metadata narrows the likely source versions: WebApplet is listed through 22.0.0 and marked stubbed from 22.0.0+, BrowserDll is listed at 23.0.0.1200, and the 23.0.1 changelog lists `sdb` plus `SystemVersion:/file`; these are not byte identity proof (`reports/PHASE24_HOS_ARTIFACT_ACQUISITION.md`).
+- Wait for an authorized, integrity-verifiable openWeb executable + matching NPDM + BrowserDll/SystemData/OSS set. Corrected target: Switch 1 WifiWebAuth applet ID `0x19` maps to program `0100000000001043` from 22.0.0+; the old `0100000000001011` title is stubbed from 22.0.0+. Public catalogs list openWeb and BrowserDll at component revision `23.0.0.1200`; HOS 23.0.1 metadata lists only `sdb` and `SystemVersion:/file` changes. Phase 25 found no eligible binaries or user backups, so this is still metadata inference, not binary identity (`reports/PHASE25_BROWSERDLL_TARGET_RESEARCH.md`).
 - Use the Phase 23 parser for read-only metadata triage when a legitimate input arrives; preserve its explicit no-decompression/no-signature-verification limits. No real HOS input is currently available (`reports/PHASE23_DIFFERENTIAL_ANALYSIS.md`).
 - Invite independent review of evidence labels, privacy scrubbing, and historical conclusions.
 - Clarify exact hardware identity and distinguish owner-reported model/firmware from direct silicon evidence.
@@ -14,7 +14,7 @@ This roadmap is about improving evidence quality and shared research. It does no
 ## Next, if new evidence supports it
 
 - Review new public security advisories, conference material, and research repositories for exact Switch 1 hardware/firmware scope.
-- If a legally obtained, unencrypted artifact set is provided, first compare its title/build metadata to the Phase 24 candidate versions, hash the original inputs, then use NSTool v1.9.2 and the project parser read-only. Do not source firmware or keys through this project.
+- If a legally obtained, unencrypted candidate set is provided, hash and identify openWeb `0100000000001043` + its paired `main.npdm` and BrowserDll `0100000000000803` SystemData. Compare title/build metadata with the Phase 25 candidate revisions before using NSTool and the project parser read-only. Do not source firmware or keys through this project.
 - Design safe experiments around publicly documented stock interfaces, with explicit stop criteria and no malformed console traffic.
 
 ## Later
@@ -24,6 +24,8 @@ This roadmap is about improving evidence quality and shared research. It does no
 - Decide whether a specific technical lead merits deeper work based on pre-homebrew reachability.
 
 ## Done / closed branches
+
+- Phase 25 corrected the stock WifiWebAuth target mapping: applet ID `0x19` maps to openWeb `0100000000001043` on 22.0.0+; BrowserDll and openWeb are listed as 23.0.0.1200, with BrowserDll NetFront/buildinfo content changed in 23.0.0. The relevant files and a user backup were not present, so no target binary analysis occurred (`reports/PHASE25_BROWSERDLL_TARGET_RESEARCH.md`).
 
 - Phase 23 added bounded NSO/NRO/KIP/NPDM metadata decoders and differential regression coverage. NSTool agreed on tested synthetic access-control/capability structures and the local homebrew NRO. A source-level ACID `+0x200` correction and ThreadInfo documentation discrepancy are recorded; no HOS executable or exploit evidence was obtained (`reports/PHASE23_DIFFERENTIAL_ANALYSIS.md`).
 - Phase 22 built and compared MIT-licensed NSTool v1.9.2 against the local homebrew NRO and synthetic format fixtures. It exposed version-support gaps but acquired no HOS artifact; WebApplet reverse engineering remains gated on an authorized target set (`reports/PHASE22_ARTIFACT_ACQUISITION.md`).
