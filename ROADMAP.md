@@ -4,7 +4,7 @@ This roadmap is about improving evidence quality and shared research. It does no
 
 ## Now
 
-- Wait for an authorized, integrity-verifiable HOS 23.0.1 WebApplet artifact set: inspectable main executable + matching NPDM/build identity + same-build BrowserDll/SystemData (shared NetFront/OSS modules and relevant browser data). Phase 22 found no licensed public binary set; NSTool v1.9.2 parses a bounded subset but does not cover NSO ZBIC, KIP decompression, NRO 23+ compression, or newer NPDM fields (`reports/PHASE22_ARTIFACT_ACQUISITION.md`).
+- Wait for an authorized, integrity-verifiable WebApplet artifact set and matching NPDM/build identity plus BrowserDll/SystemData/OSS modules. Phase 24 found no eligible binaries locally or in clearly redistributable public datasets. Community metadata narrows the likely source versions: WebApplet is listed through 22.0.0 and marked stubbed from 22.0.0+, BrowserDll is listed at 23.0.0.1200, and the 23.0.1 changelog lists `sdb` plus `SystemVersion:/file`; these are not byte identity proof (`reports/PHASE24_HOS_ARTIFACT_ACQUISITION.md`).
 - Use the Phase 23 parser for read-only metadata triage when a legitimate input arrives; preserve its explicit no-decompression/no-signature-verification limits. No real HOS input is currently available (`reports/PHASE23_DIFFERENTIAL_ANALYSIS.md`).
 - Invite independent review of evidence labels, privacy scrubbing, and historical conclusions.
 - Clarify exact hardware identity and distinguish owner-reported model/firmware from direct silicon evidence.
@@ -14,7 +14,7 @@ This roadmap is about improving evidence quality and shared research. It does no
 ## Next, if new evidence supports it
 
 - Review new public security advisories, conference material, and research repositories for exact Switch 1 hardware/firmware scope.
-- Analyze only legally obtained, integrity-verifiable artifacts; do not source firmware or keys through this project.
+- If a legally obtained, unencrypted artifact set is provided, first compare its title/build metadata to the Phase 24 candidate versions, hash the original inputs, then use NSTool v1.9.2 and the project parser read-only. Do not source firmware or keys through this project.
 - Design safe experiments around publicly documented stock interfaces, with explicit stop criteria and no malformed console traffic.
 
 ## Later
