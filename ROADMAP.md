@@ -5,6 +5,7 @@ This roadmap is about improving evidence quality and shared research. It does no
 ## Now
 
 - Wait for an authorized, integrity-verifiable HOS 23.0.1 WebApplet artifact set: inspectable main executable + matching NPDM/build identity + same-build BrowserDll/SystemData (shared NetFront/OSS modules and relevant browser data). Phase 22 found no licensed public binary set; NSTool v1.9.2 parses a bounded subset but does not cover NSO ZBIC, KIP decompression, NRO 23+ compression, or newer NPDM fields (`reports/PHASE22_ARTIFACT_ACQUISITION.md`).
+- Use the Phase 23 parser for read-only metadata triage when a legitimate input arrives; preserve its explicit no-decompression/no-signature-verification limits. No real HOS input is currently available (`reports/PHASE23_DIFFERENTIAL_ANALYSIS.md`).
 - Invite independent review of evidence labels, privacy scrubbing, and historical conclusions.
 - Clarify exact hardware identity and distinguish owner-reported model/firmware from direct silicon evidence.
 - Reproduce safe host-side tests from a clean checkout.
@@ -24,6 +25,7 @@ This roadmap is about improving evidence quality and shared research. It does no
 
 ## Done / closed branches
 
+- Phase 23 added bounded NSO/NRO/KIP/NPDM metadata decoders and differential regression coverage. NSTool agreed on tested synthetic access-control/capability structures and the local homebrew NRO. A source-level ACID `+0x200` correction and ThreadInfo documentation discrepancy are recorded; no HOS executable or exploit evidence was obtained (`reports/PHASE23_DIFFERENTIAL_ANALYSIS.md`).
 - Phase 22 built and compared MIT-licensed NSTool v1.9.2 against the local homebrew NRO and synthetic format fixtures. It exposed version-support gaps but acquired no HOS artifact; WebApplet reverse engineering remains gated on an authorized target set (`reports/PHASE22_ARTIFACT_ACQUISITION.md`).
 - Phase 21 public-source architecture review confirms the WebApplet main NSO/NPDM alone would not capture the shared BrowserDll/SystemData engine; no target 23.0.1 binary set was found or acquired, so code/permission analysis remains blocked (`reports/PHASE21_WEBAPPLET_ANALYSIS.md`).
 - Phase 20 confirmed the local Phase 18/19 commit is present and complete; GitHub remains unsynchronized because local hostname resolution failed and the configured `gh` credential is invalid. No authentication workaround was attempted (`reports/PHASE20_GITHUB_AND_RESEARCH_AUDIT.md`).
